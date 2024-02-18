@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lost Cities Score Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Lost Cities Score Calculator</h1>
+    <div id="expeditions">
+      <!-- Expedition Block -->
+      <div class="expedition" data-color="red">
+        <h2>Red Expedition</h2>
+        <div class="wagers">
+          <h3>Wagers</h3>
+          <input type="checkbox" id="red-wager-1" class="wager" value="1" />
+          <label for="red-wager-1" class="wager-pill">1</label>
+          <input type="checkbox" id="red-wager-2" class="wager" value="2" />
+          <label for="red-wager-2" class="wager-pill">2</label>
+          <input type="checkbox" id="red-wager-3" class="wager" value="3" />
+          <label for="red-wager-3" class="wager-pill">3</label>
+        </div>
+        <div class="cards">
+          <h3>Cards</h3>
+          <input type="checkbox" id="red-card-2" class="card" value="2" />
+          <label for="red-card-2" class="card-pill">2</label>
+          <input type="checkbox" id="red-card-3" class="card" value="3" />
+          <label for="red-card-3" class="card-pill">3</label>
+          <input type="checkbox" id="red-card-4" class="card" value="4" />
+          <label for="red-card-4" class="card-pill">4</label>
+          <input type="checkbox" id="red-card-5" class="card" value="5" />
+          <label for="red-card-5" class="card-pill">5</label>
+          <input type="checkbox" id="red-card-6" class="card" value="6" />
+          <label for="red-card-6" class="card-pill">6</label>
+          <input type="checkbox" id="red-card-7" class="card" value="7" />
+          <label for="red-card-7" class="card-pill">7</label>
+          <input type="checkbox" id="red-card-8" class="card" value="8" />
+          <label for="red-card-8" class="card-pill">8</label>
+          <input type="checkbox" id="red-card-9" class="card" value="9" />
+          <label for="red-card-9" class="card-pill">9</label>
+          <input type="checkbox" id="red-card-10" class="card" value="10" />
+          <label for="red-card-10" class="card-pill">10</label>
+        </div>
+      </div>
+      <!-- ... other expeditions ... -->
+    </div>
+    <button onclick="calculateScore()">Calculate Total Score</button>
+    <div id="total-score">Total Score: 0</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+#expeditions {
+    margin-bottom: 20px;
+}
+
+.expedition {
+    margin-bottom: 10px;
+}
+
+/* Removed input[type="number"] as it's not used in the current context */
+
+#total-score {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Updated for checkbox styling */
+.wager, .card {
+    display: none; /* Hide the actual checkboxes */
+}
+
+.wager-pill, .card-pill {
+    display: inline-block;
+    border: 2px solid #007bff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 5px;
+    user-select: none;
+}
+
+.wager-pill:hover, .card-pill:hover {
+    background-color: #e7f5ff;
+}
+
+/* Updated selectors for checked state */
+.wager:checked + .wager-pill, .card:checked + .card-pill {
+    background-color: #007bff;
+    color: white;
+}

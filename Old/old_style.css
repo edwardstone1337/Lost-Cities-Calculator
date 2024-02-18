@@ -19,9 +19,9 @@ body {
   gap: 8px;
 }
 
-#player1 {
+/* #player1 {
   transform: rotate(180deg);
-}
+} */
 
 #player1 .expeditions {
   display: flex;

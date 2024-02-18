@@ -1,47 +1,251 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f0f0;
-    padding: 20px;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
-#expeditions {
-    margin-bottom: 20px;
+.player {
+  display: flex;
+  flex-direction: column;
+  /* height: 50vh; 50% of the viewport height */
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto; /* In case the content overflows */
+  gap: 8px;
+}
+
+#player1 {
+  transform: rotate(180deg);
+}
+
+#player1 .expeditions {
+  display: flex;
+  flex-direction: row-reverse; /* Reverse the order of the flex items */
+}
+
+#player1 .expedition {
+  flex: 1; /* Equal distribution of space */
+}
+
+/* Start of Board*/
+.board {
+    display: flex;
+    flex-direction: row; /* Corrected */
+    width: 388px;
+    gap: 8px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }  
+
+.board.reversed-order .board-column:nth-child(1) {
+  order: 6;
+}
+.board.reversed-order .board-column:nth-child(2) {
+  order: 5;
+}
+.board.reversed-order .board-column:nth-child(3) {
+  order: 4;
+}
+.board.reversed-order .board-column:nth-child(4) {
+  order: 3;
+}
+.board.reversed-order .board-column:nth-child(5) {
+  order: 2;
+}
+.board.reversed-order .board-column:nth-child(6) {
+  order: 1;
+}
+
+.board .board-column {
+  flex-grow: 1;
+}
+
+#board-column-purple {
+  background-color: #800080; /* Purple */
+}
+
+#board-column-red {
+  background-color: #ff0000; /* Red */
+}
+
+#board-column-green {
+  background-color: #008000; /* Green */
+}
+
+#board-column-blue {
+  background-color: #0000ff; /* Blue */
+}
+
+#board-column-white {
+  background-color: #ffffff; /* White */
+}
+
+#board-column-gold {
+  background-color: #ffd700; /* Gold */
+}
+
+/* End of Board*/
+
+.flip-button {
+  display: flex;
+  justify-content: center; /* Horizontally centers the button */
+  align-items: center; /* Vertically centers the button */
+  height: 100%; /* Ensure the container has a height to work with */
+  width: 100%; /* Maintain full width */
+}
+
+#player2 {
+}
+
+.expeditions {
+  display: flex; /* Using Flexbox for layout */
+  flex: 1;
+  flex-wrap: wrap; /* Allows items to wrap as needed */
+  gap: 8px; /* Spacing between items */
+  justify-content: center; /* Center items horizontally */
+  max-width: 1200px; /* Maximum width of the container */
+  margin: 0 auto; /* Center the container */
+  width: 100%;
 }
 
 .expedition {
-    margin-bottom: 10px;
+  flex: 0 0 calc(100% / 6); /* Each expedition takes up 1/6th of the container width */
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  gap: 8px;
 }
 
-/* Removed input[type="number"] as it's not used in the current context */
+[class^="expedition-"] {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0; /* Example common style */
+  gap: 4px;
+}
+
+/* Initial order */
+.expedition-purple {
+  order: 1;
+}
+
+.expedition-red {
+  order: 2;
+}
+.expedition-green {
+  order: 3;
+}
+.expedition-blue {
+  order: 4;
+}
+.expedition-white {
+  order: 5;
+}
+.expedition-gold {
+  order: 6;
+}
+
+/* Reversed order */
+.expeditions.reversed-order .expedition-purple {
+  order: 6;
+}
+.expeditions.reversed-order .expedition-red {
+  order: 5;
+}
+.expeditions.reversed-order .expedition-green {
+  order: 4;
+}
+.expeditions.reversed-order .expedition-blue {
+  order: 3;
+}
+.expeditions.reversed-order .expedition-white {
+  order: 2;
+}
+.expeditions.reversed-order .expedition-gold {
+  order: 1;
+}
+
+.expedition-purple {
+  background-color: lavender; /* Light purple */
+}
+
+.expedition-red {
+  background-color: lightcoral; /* Light red */
+}
+
+.expedition-green {
+  background-color: lightgreen; /* Light green */
+}
+
+.expedition-blue {
+  background-color: lightblue; /* Light blue */
+}
+
+.expedition-white {
+  background-color: whitesmoke; /* Light white */
+}
+
+.expedition-gold {
+  background-color: lightgoldenrodyellow; /* Light gold */
+}
 
 #total-score {
-    margin-top: 20px;
-    font-size: 1.2em;
-    font-weight: bold;
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
+.wagers, .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Allows child elements to fill the width */
+    width: 100%; /* Full width of their container */
+    gap: 4px;
+  }
+  
+
 /* Updated for checkbox styling */
-.wager, .card {
-    display: none; /* Hide the actual checkboxes */
+.wager,
+.card {
+  display: none; /* Hide the actual checkboxes */
 }
 
 .wager-pill, .card-pill {
-    display: inline-block;
-    border: 2px solid #007bff;
-    padding: 5px 15px;
-    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #007bff;
+    border-radius: 4px;
     cursor: pointer;
-    margin-right: 5px;
     user-select: none;
-}
+    line-height: 24px;
+    width: 80px; /* Updated to fill width */
+    height: 40px;
+  }  
 
-.wager-pill:hover, .card-pill:hover {
-    background-color: #e7f5ff;
+.wager-pill:hover,
+.card-pill:hover {
+  background-color: #e7f5ff;
 }
 
 /* Updated selectors for checked state */
-.wager:checked + .wager-pill, .card:checked + .card-pill {
-    background-color: #007bff;
-    color: white;
+.wager:checked + .wager-pill,
+.card:checked + .card-pill {
+  background-color: #007bff;
+  color: white;
+}
+
+.scores {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  gap: 8px;
 }

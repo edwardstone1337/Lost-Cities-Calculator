@@ -4,716 +4,840 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lost Cities Score Calculator</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <!-- Player 1's Calculator -->
-    <div class="player" id="player1">
-      <!--<h2>Player 1's Score Calculator</h2>-->
-      <div class="expeditions">
-        <div class="expedition-purple" data-color="purple">
-          <!-- <h3>purple</h3> -->
-          <div class="wagers">
-            <!-- <h4>Wagers</h4> -->
-            <input
-              type="checkbox"
-              id="purple-wager-1"
-              class="wager"
-              value="1"
-            />
-            <label for="purple-wager-1" class="wager-pill">🤝</label>
-            <input
-              type="checkbox"
-              id="purple-wager-2"
-              class="wager"
-              value="2"
-            />
-            <label for="purple-wager-2" class="wager-pill">🤝</label>
-            <input
-              type="checkbox"
-              id="purple-wager-3"
-              class="wager"
-              value="3"
-            />
-            <label for="purple-wager-3" class="wager-pill">🤝</label>
+    <button id="swapOrder">Swap Order</button>
+    <div class="container">
+      <div class="expedition-purple">
+        <div class="colour-card"></div>
+        <div class="card-stack">
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-          <div class="cards">
-            <!-- <h4>Cards</h4> -->
-            <input type="checkbox" id="purple-card-2" class="card" value="2" />
-            <label for="purple-card-2" class="card-pill">2</label>
-            <input type="checkbox" id="purple-card-3" class="card" value="3" />
-            <label for="purple-card-3" class="card-pill">3</label>
-            <input type="checkbox" id="purple-card-4" class="card" value="4" />
-            <label for="purple-card-4" class="card-pill">4</label>
-            <input type="checkbox" id="purple-card-5" class="card" value="5" />
-            <label for="purple-card-5" class="card-pill">5</label>
-            <input type="checkbox" id="purple-card-6" class="card" value="6" />
-            <label for="purple-card-6" class="card-pill">6</label>
-            <input type="checkbox" id="purple-card-7" class="card" value="7" />
-            <label for="purple-card-7" class="card-pill">7</label>
-            <input type="checkbox" id="purple-card-8" class="card" value="8" />
-            <label for="purple-card-8" class="card-pill">8</label>
-            <input type="checkbox" id="purple-card-9" class="card" value="9" />
-            <label for="purple-card-9" class="card-pill">9</label>
-            <input
-              type="checkbox"
-              id="purple-card-10"
-              class="card"
-              value="10"
-            />
-            <label for="purple-card-10" class="card-pill">10</label>
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-        </div>
-        <div class="expedition-red" data-color="red">
-          <!-- <h3>red</h3> -->
-          <div class="wagers">
-            <!-- <h4>Wagers</h4> -->
-            <input type="checkbox" id="red-wager-1" class="wager" value="1" />
-            <label for="red-wager-1" class="wager-pill">🤝</label>
-            <input type="checkbox" id="red-wager-2" class="wager" value="2" />
-            <label for="red-wager-2" class="wager-pill">🤝</label>
-            <input type="checkbox" id="red-wager-3" class="wager" value="3" />
-            <label for="red-wager-3" class="wager-pill">🤝</label>
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-          <div class="cards">
-            <!-- <h4>Cards</h4> -->
-            <input type="checkbox" id="red-card-2" class="card" value="2" />
-            <label for="red-card-2" class="card-pill">2</label>
-            <input type="checkbox" id="red-card-3" class="card" value="3" />
-            <label for="red-card-3" class="card-pill">3</label>
-            <input type="checkbox" id="red-card-4" class="card" value="4" />
-            <label for="red-card-4" class="card-pill">4</label>
-            <input type="checkbox" id="red-card-5" class="card" value="5" />
-            <label for="red-card-5" class="card-pill">5</label>
-            <input type="checkbox" id="red-card-6" class="card" value="6" />
-            <label for="red-card-6" class="card-pill">6</label>
-            <input type="checkbox" id="red-card-7" class="card" value="7" />
-            <label for="red-card-7" class="card-pill">7</label>
-            <input type="checkbox" id="red-card-8" class="card" value="8" />
-            <label for="red-card-8" class="card-pill">8</label>
-            <input type="checkbox" id="red-card-9" class="card" value="9" />
-            <label for="red-card-9" class="card-pill">9</label>
-            <input type="checkbox" id="red-card-10" class="card" value="10" />
-            <label for="red-card-10" class="card-pill">10</label>
+          <div class="card expedition-card" value="2">
+            <div class="text">
+              <div class="text-left">
+                <p>2</p>
+              </div>
+              <div class="text-right">
+                <p>2</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-        </div>
-        <div class="expedition-green" data-color="green">
-          <!-- <h3>green</h3> -->
-          <div class="wagers">
-            <!-- <h4>Wagers</h4> -->
-            <input type="checkbox" id="green-wager-1" class="wager" value="1" />
-            <label for="green-wager-1" class="wager-pill">🤝</label>
-            <input type="checkbox" id="green-wager-2" class="wager" value="2" />
-            <label for="green-wager-2" class="wager-pill">🤝</label>
-            <input type="checkbox" id="green-wager-3" class="wager" value="3" />
-            <label for="green-wager-3" class="wager-pill">🤝</label>
+          <div class="card expedition-card" value="3">
+            <div class="text">
+              <div class="text-left">
+                <p>3</p>
+              </div>
+              <div class="text-right">
+                <p>3</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-          <div class="cards">
-            <!-- <h4>Cards</h4> -->
-            <input type="checkbox" id="green-card-2" class="card" value="2" />
-            <label for="green-card-2" class="card-pill">2</label>
-            <input type="checkbox" id="green-card-3" class="card" value="3" />
-            <label for="green-card-3" class="card-pill">3</label>
-            <input type="checkbox" id="green-card-4" class="card" value="4" />
-            <label for="green-card-4" class="card-pill">4</label>
-            <input type="checkbox" id="green-card-5" class="card" value="5" />
-            <label for="green-card-5" class="card-pill">5</label>
-            <input type="checkbox" id="green-card-6" class="card" value="6" />
-            <label for="green-card-6" class="card-pill">6</label>
-            <input type="checkbox" id="green-card-7" class="card" value="7" />
-            <label for="green-card-7" class="card-pill">7</label>
-            <input type="checkbox" id="green-card-8" class="card" value="8" />
-            <label for="green-card-8" class="card-pill">8</label>
-            <input type="checkbox" id="green-card-9" class="card" value="9" />
-            <label for="green-card-9" class="card-pill">9</label>
-            <input type="checkbox" id="green-card-10" class="card" value="10" />
-            <label for="green-card-10" class="card-pill">10</label>
+          <div class="card expedition-card" value="4">
+            <div class="text">
+              <div class="text-left">
+                <p>4</p>
+              </div>
+              <div class="text-right">
+                <p>4</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-        </div>
-        <div class="expedition-blue" data-color="blue">
-          <!-- <h3>blue</h3> -->
-          <div class="wagers">
-            <!-- <h4>Wagers</h4> -->
-            <input type="checkbox" id="blue-wager-1" class="wager" value="1" />
-            <label for="blue-wager-1" class="wager-pill">🤝</label>
-            <input type="checkbox" id="blue-wager-2" class="wager" value="2" />
-            <label for="blue-wager-2" class="wager-pill">🤝</label>
-            <input type="checkbox" id="blue-wager-3" class="wager" value="3" />
-            <label for="blue-wager-3" class="wager-pill">🤝</label>
+          <div class="card expedition-card" value="5">
+            <div class="text">
+              <div class="text-left">
+                <p>5</p>
+              </div>
+              <div class="text-right">
+                <p>5</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-          <div class="cards">
-            <!-- <h4>Cards</h4> -->
-            <input type="checkbox" id="blue-card-2" class="card" value="2" />
-            <label for="blue-card-2" class="card-pill">2</label>
-            <input type="checkbox" id="blue-card-3" class="card" value="3" />
-            <label for="blue-card-3" class="card-pill">3</label>
-            <input type="checkbox" id="blue-card-4" class="card" value="4" />
-            <label for="blue-card-4" class="card-pill">4</label>
-            <input type="checkbox" id="blue-card-5" class="card" value="5" />
-            <label for="blue-card-5" class="card-pill">5</label>
-            <input type="checkbox" id="blue-card-6" class="card" value="6" />
-            <label for="blue-card-6" class="card-pill">6</label>
-            <input type="checkbox" id="blue-card-7" class="card" value="7" />
-            <label for="blue-card-7" class="card-pill">7</label>
-            <input type="checkbox" id="blue-card-8" class="card" value="8" />
-            <label for="blue-card-8" class="card-pill">8</label>
-            <input type="checkbox" id="blue-card-9" class="card" value="9" />
-            <label for="blue-card-9" class="card-pill">9</label>
-            <input type="checkbox" id="blue-card-10" class="card" value="10" />
-            <label for="blue-card-10" class="card-pill">10</label>
+          <div class="card expedition-card" value="6">
+            <div class="text">
+              <div class="text-left">
+                <p>6</p>
+              </div>
+              <div class="text-right">
+                <p>6</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-        </div>
-        <div class="expedition-white" data-color="white">
-          <!-- <h3>white</h3> -->
-          <div class="wagers">
-            <!-- <h4>Wagers</h4> -->
-            <input type="checkbox" id="white-wager-1" class="wager" value="1" />
-            <label for="white-wager-1" class="wager-pill">🤝</label>
-            <input type="checkbox" id="white-wager-2" class="wager" value="2" />
-            <label for="white-wager-2" class="wager-pill">🤝</label>
-            <input type="checkbox" id="white-wager-3" class="wager" value="3" />
-            <label for="white-wager-3" class="wager-pill">🤝</label>
+          <div class="card expedition-card" value="7">
+            <div class="text">
+              <div class="text-left">
+                <p>7</p>
+              </div>
+              <div class="text-right">
+                <p>7</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-          <div class="cards">
-            <!-- <h4>Cards</h4> -->
-            <input type="checkbox" id="white-card-2" class="card" value="2" />
-            <label for="white-card-2" class="card-pill">2</label>
-            <input type="checkbox" id="white-card-3" class="card" value="3" />
-            <label for="white-card-3" class="card-pill">3</label>
-            <input type="checkbox" id="white-card-4" class="card" value="4" />
-            <label for="white-card-4" class="card-pill">4</label>
-            <input type="checkbox" id="white-card-5" class="card" value="5" />
-            <label for="white-card-5" class="card-pill">5</label>
-            <input type="checkbox" id="white-card-6" class="card" value="6" />
-            <label for="white-card-6" class="card-pill">6</label>
-            <input type="checkbox" id="white-card-7" class="card" value="7" />
-            <label for="white-card-7" class="card-pill">7</label>
-            <input type="checkbox" id="white-card-8" class="card" value="8" />
-            <label for="white-card-8" class="card-pill">8</label>
-            <input type="checkbox" id="white-card-9" class="card" value="9" />
-            <label for="white-card-9" class="card-pill">9</label>
-            <input type="checkbox" id="white-card-10" class="card" value="10" />
-            <label for="white-card-10" class="card-pill">10</label>
+          <div class="card expedition-card" value="8">
+            <div class="text">
+              <div class="text-left">
+                <p>8</p>
+              </div>
+              <div class="text-right">
+                <p>8</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-        </div>
-        <div class="expedition-gold" data-color="gold">
-          <!-- <h3>gold</h3> -->
-          <div class="wagers">
-            <!-- <h4>Wagers</h4> -->
-            <input type="checkbox" id="gold-wager-1" class="wager" value="1" />
-            <label for="gold-wager-1" class="wager-pill">🤝</label>
-            <input type="checkbox" id="gold-wager-2" class="wager" value="2" />
-            <label for="gold-wager-2" class="wager-pill">🤝</label>
-            <input type="checkbox" id="gold-wager-3" class="wager" value="3" />
-            <label for="gold-wager-3" class="wager-pill">🤝</label>
+          <div class="card expedition-card" value="9">
+            <div class="text">
+              <div class="text-left">
+                <p>9</p>
+              </div>
+              <div class="text-right">
+                <p>9</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-          <div class="cards">
-            <!-- <h4>Cards</h4> -->
-            <input type="checkbox" id="gold-card-2" class="card" value="2" />
-            <label for="gold-card-2" class="card-pill">2</label>
-            <input type="checkbox" id="gold-card-3" class="card" value="3" />
-            <label for="gold-card-3" class="card-pill">3</label>
-            <input type="checkbox" id="gold-card-4" class="card" value="4" />
-            <label for="gold-card-4" class="card-pill">4</label>
-            <input type="checkbox" id="gold-card-5" class="card" value="5" />
-            <label for="gold-card-5" class="card-pill">5</label>
-            <input type="checkbox" id="gold-card-6" class="card" value="6" />
-            <label for="gold-card-6" class="card-pill">6</label>
-            <input type="checkbox" id="gold-card-7" class="card" value="7" />
-            <label for="gold-card-7" class="card-pill">7</label>
-            <input type="checkbox" id="gold-card-8" class="card" value="8" />
-            <label for="gold-card-8" class="card-pill">8</label>
-            <input type="checkbox" id="gold-card-9" class="card" value="9" />
-            <label for="gold-card-9" class="card-pill">9</label>
-            <input type="checkbox" id="gold-card-10" class="card" value="10" />
-            <label for="gold-card-10" class="card-pill">10</label>
+          <div class="card expedition-card" value="10">
+            <div class="text">
+              <div class="text-left">
+                <p>10</p>
+              </div>
+              <div class="text-right">
+                <p>10</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
         </div>
       </div>
-      <div class="scores">
-      <button onclick="calculateScore('player1')">
-        Calculate Player 1's Total Score
-      </button>
-      <div class="total-score">Total Score: 0</div>
-      <button onclick="resetCheckboxes('player1')">Reset</button>
-    </div>
-      <!-- ... Other expeditions for Player 1 ... -->
-    </div>
-    <!-- End of Player 1's Calculator -->
-
-    <!-- <div class="board">
-        <div class="board-column" id="board-column-purple">...</div>
-        <div class="board-column" id="board-column-red">...</div>
-        <div class="board-column" id="board-column-green">...</div>
-        <div class="board-column" id="board-column-blue">...</div>
-        <div class="board-column" id="board-column-white">...</div>
-        <div class="board-column" id="board-column-gold">...</div>
-    </div> -->
-    
-
-
-
-    <!-- Button -->
-    <div class="flip-button">
-      <button onclick="toggleExpeditionOrder()">Toggle Expedition Order</button>
-    </div>
-
-    <!-- Player 2's Calculator -->
-    <div class="player" id="player2">
-      <!--<h2>Player 2's Score Calculator</h2>-->
-      <div class="expeditions">
-        <div class="expedition-purple" data-color="purple">
-          <!-- <h3>purple</h3> -->
-          <div class="wagers">
-            <!-- <h4>Wagers</h4> -->
-            <input
-              type="checkbox"
-              id="p2-purple-wager-1"
-              class="wager"
-              value="1"
-            />
-            <label for="p2-purple-wager-1" class="wager-pill">🤝</label>
-            <input
-              type="checkbox"
-              id="p2-purple-wager-2"
-              class="wager"
-              value="2"
-            />
-            <label for="p2-purple-wager-2" class="wager-pill">🤝</label>
-            <input
-              type="checkbox"
-              id="p2-purple-wager-3"
-              class="wager"
-              value="3"
-            />
-            <label for="p2-purple-wager-3" class="wager-pill">🤝</label>
+      <div class="expedition-red">
+        <div class="colour-card"></div>
+        <div class="card-stack">
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-          <div class="cards">
-            <!-- <h4>Cards</h4> -->
-            <input
-              type="checkbox"
-              id="p2-purple-card-2"
-              class="card"
-              value="2"
-            />
-            <label for="p2-purple-card-2" class="card-pill">2</label>
-            <input
-              type="checkbox"
-              id="p2-purple-card-3"
-              class="card"
-              value="3"
-            />
-            <label for="p2-purple-card-3" class="card-pill">3</label>
-            <input
-              type="checkbox"
-              id="p2-purple-card-4"
-              class="card"
-              value="4"
-            />
-            <label for="p2-purple-card-4" class="card-pill">4</label>
-            <input
-              type="checkbox"
-              id="p2-purple-card-5"
-              class="card"
-              value="5"
-            />
-            <label for="p2-purple-card-5" class="card-pill">5</label>
-            <input
-              type="checkbox"
-              id="p2-purple-card-6"
-              class="card"
-              value="6"
-            />
-            <label for="p2-purple-card-6" class="card-pill">6</label>
-            <input
-              type="checkbox"
-              id="p2-purple-card-7"
-              class="card"
-              value="7"
-            />
-            <label for="p2-purple-card-7" class="card-pill">7</label>
-            <input
-              type="checkbox"
-              id="p2-purple-card-8"
-              class="card"
-              value="8"
-            />
-            <label for="p2-purple-card-8" class="card-pill">8</label>
-            <input
-              type="checkbox"
-              id="p2-purple-card-9"
-              class="card"
-              value="9"
-            />
-            <label for="p2-purple-card-9" class="card-pill">9</label>
-            <input
-              type="checkbox"
-              id="p2-purple-card-10"
-              class="card"
-              value="10"
-            />
-            <label for="p2-purple-card-10" class="card-pill">10</label>
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-        </div>
-        <div class="expedition-red" data-color="red">
-          <!-- <h3>Red</h3> -->
-          <div class="wagers">
-            <!-- <h4>Wagers</h4> -->
-            <input
-              type="checkbox"
-              id="p2-red-wager-1"
-              class="wager"
-              value="1"
-            />
-            <label for="p2-red-wager-1" class="wager-pill">🤝</label>
-            <input
-              type="checkbox"
-              id="p2-red-wager-2"
-              class="wager"
-              value="2"
-            />
-            <label for="p2-red-wager-2" class="wager-pill">🤝</label>
-            <input
-              type="checkbox"
-              id="p2-red-wager-3"
-              class="wager"
-              value="3"
-            />
-            <label for="p2-red-wager-3" class="wager-pill">🤝</label>
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-          <div class="cards">
-            <!-- <h4>Cards</h4> -->
-            <input type="checkbox" id="p2-red-card-2" class="card" value="2" />
-            <label for="p2-red-card-2" class="card-pill">2</label>
-            <input type="checkbox" id="p2-red-card-3" class="card" value="3" />
-            <label for="p2-red-card-3" class="card-pill">3</label>
-            <input type="checkbox" id="p2-red-card-4" class="card" value="4" />
-            <label for="p2-red-card-4" class="card-pill">4</label>
-            <input type="checkbox" id="p2-red-card-5" class="card" value="5" />
-            <label for="p2-red-card-5" class="card-pill">5</label>
-            <input type="checkbox" id="p2-red-card-6" class="card" value="6" />
-            <label for="p2-red-card-6" class="card-pill">6</label>
-            <input type="checkbox" id="p2-red-card-7" class="card" value="7" />
-            <label for="p2-red-card-7" class="card-pill">7</label>
-            <input type="checkbox" id="p2-red-card-8" class="card" value="8" />
-            <label for="p2-red-card-8" class="card-pill">8</label>
-            <input type="checkbox" id="p2-red-card-9" class="card" value="9" />
-            <label for="p2-red-card-9" class="card-pill">9</label>
-            <input
-              type="checkbox"
-              id="p2-red-card-10"
-              class="card"
-              value="10"
-            />
-            <label for="p2-red-card-10" class="card-pill">10</label>
+          <div class="card expedition-card" value="2">
+            <div class="text">
+              <div class="text-left">
+                <p>2</p>
+              </div>
+              <div class="text-right">
+                <p>2</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-        </div>
-        <div class="expedition-green" data-color="green">
-          <!-- <h3>green</h3> -->
-          <div class="wagers">
-            <!-- <h4>Wagers</h4> -->
-            <input
-              type="checkbox"
-              id="p2-green-wager-1"
-              class="wager"
-              value="1"
-            />
-            <label for="p2-green-wager-1" class="wager-pill">🤝</label>
-            <input
-              type="checkbox"
-              id="p2-green-wager-2"
-              class="wager"
-              value="2"
-            />
-            <label for="p2-green-wager-2" class="wager-pill">🤝</label>
-            <input
-              type="checkbox"
-              id="p2-green-wager-3"
-              class="wager"
-              value="3"
-            />
-            <label for="p2-green-wager-3" class="wager-pill">🤝</label>
+          <div class="card expedition-card" value="3">
+            <div class="text">
+              <div class="text-left">
+                <p>3</p>
+              </div>
+              <div class="text-right">
+                <p>3</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-          <div class="cards">
-            <!-- <h4>Cards</h4> -->
-            <input
-              type="checkbox"
-              id="p2-green-card-2"
-              class="card"
-              value="2"
-            />
-            <label for="p2-green-card-2" class="card-pill">2</label>
-            <input
-              type="checkbox"
-              id="p2-green-card-3"
-              class="card"
-              value="3"
-            />
-            <label for="p2-green-card-3" class="card-pill">3</label>
-            <input
-              type="checkbox"
-              id="p2-green-card-4"
-              class="card"
-              value="4"
-            />
-            <label for="p2-green-card-4" class="card-pill">4</label>
-            <input
-              type="checkbox"
-              id="p2-green-card-5"
-              class="card"
-              value="5"
-            />
-            <label for="p2-green-card-5" class="card-pill">5</label>
-            <input
-              type="checkbox"
-              id="p2-green-card-6"
-              class="card"
-              value="6"
-            />
-            <label for="p2-green-card-6" class="card-pill">6</label>
-            <input
-              type="checkbox"
-              id="p2-green-card-7"
-              class="card"
-              value="7"
-            />
-            <label for="p2-green-card-7" class="card-pill">7</label>
-            <input
-              type="checkbox"
-              id="p2-green-card-8"
-              class="card"
-              value="8"
-            />
-            <label for="p2-green-card-8" class="card-pill">8</label>
-            <input
-              type="checkbox"
-              id="p2-green-card-9"
-              class="card"
-              value="9"
-            />
-            <label for="p2-green-card-9" class="card-pill">9</label>
-            <input
-              type="checkbox"
-              id="p2-green-card-10"
-              class="card"
-              value="10"
-            />
-            <label for="p2-green-card-10" class="card-pill">10</label>
+          <div class="card expedition-card" value="4">
+            <div class="text">
+              <div class="text-left">
+                <p>4</p>
+              </div>
+              <div class="text-right">
+                <p>4</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-
-          <!-- ... Other expeditions for Player 2 ... -->
-        </div>
-        <div class="expedition-blue" data-color="blue">
-          <!-- <h3>blue</h3> -->
-          <div class="wagers">
-            <!-- <h4>Wagers</h4> -->
-            <input
-              type="checkbox"
-              id="p2-blue-wager-1"
-              class="wager"
-              value="1"
-            />
-            <label for="p2-blue-wager-1" class="wager-pill">🤝</label>
-            <input
-              type="checkbox"
-              id="p2-blue-wager-2"
-              class="wager"
-              value="2"
-            />
-            <label for="p2-blue-wager-2" class="wager-pill">🤝</label>
-            <input
-              type="checkbox"
-              id="p2-blue-wager-3"
-              class="wager"
-              value="3"
-            />
-            <label for="p2-blue-wager-3" class="wager-pill">🤝</label>
+          <div class="card expedition-card" value="5">
+            <div class="text">
+              <div class="text-left">
+                <p>5</p>
+              </div>
+              <div class="text-right">
+                <p>5</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-          <div class="cards">
-            <!-- <h4>Cards</h4> -->
-            <input type="checkbox" id="p2-blue-card-2" class="card" value="2" />
-            <label for="p2-blue-card-2" class="card-pill">2</label>
-            <input type="checkbox" id="p2-blue-card-3" class="card" value="3" />
-            <label for="p2-blue-card-3" class="card-pill">3</label>
-            <input type="checkbox" id="p2-blue-card-4" class="card" value="4" />
-            <label for="p2-blue-card-4" class="card-pill">4</label>
-            <input type="checkbox" id="p2-blue-card-5" class="card" value="5" />
-            <label for="p2-blue-card-5" class="card-pill">5</label>
-            <input type="checkbox" id="p2-blue-card-6" class="card" value="6" />
-            <label for="p2-blue-card-6" class="card-pill">6</label>
-            <input type="checkbox" id="p2-blue-card-7" class="card" value="7" />
-            <label for="p2-blue-card-7" class="card-pill">7</label>
-            <input type="checkbox" id="p2-blue-card-8" class="card" value="8" />
-            <label for="p2-blue-card-8" class="card-pill">8</label>
-            <input type="checkbox" id="p2-blue-card-9" class="card" value="9" />
-            <label for="p2-blue-card-9" class="card-pill">9</label>
-            <input
-              type="checkbox"
-              id="p2-blue-card-10"
-              class="card"
-              value="10"
-            />
-            <label for="p2-blue-card-10" class="card-pill">10</label>
+          <div class="card expedition-card" value="6">
+            <div class="text">
+              <div class="text-left">
+                <p>6</p>
+              </div>
+              <div class="text-right">
+                <p>6</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-        </div>
-        <div class="expedition-white" data-color="white">
-          <!-- <h3>white</h3> -->
-          <div class="wagers">
-            <!-- <h4>Wagers</h4> -->
-            <input
-              type="checkbox"
-              id="p2-white-wager-1"
-              class="wager"
-              value="1"
-            />
-            <label for="p2-white-wager-1" class="wager-pill">🤝</label>
-            <input
-              type="checkbox"
-              id="p2-white-wager-2"
-              class="wager"
-              value="2"
-            />
-            <label for="p2-white-wager-2" class="wager-pill">🤝</label>
-            <input
-              type="checkbox"
-              id="p2-white-wager-3"
-              class="wager"
-              value="3"
-            />
-            <label for="p2-white-wager-3" class="wager-pill">🤝</label>
+          <div class="card expedition-card" value="7">
+            <div class="text">
+              <div class="text-left">
+                <p>7</p>
+              </div>
+              <div class="text-right">
+                <p>7</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-          <div class="cards">
-            <!-- <h4>Cards</h4> -->
-            <input
-              type="checkbox"
-              id="p2-white-card-2"
-              class="card"
-              value="2"
-            />
-            <label for="p2-white-card-2" class="card-pill">2</label>
-            <input
-              type="checkbox"
-              id="p2-white-card-3"
-              class="card"
-              value="3"
-            />
-            <label for="p2-white-card-3" class="card-pill">3</label>
-            <input
-              type="checkbox"
-              id="p2-white-card-4"
-              class="card"
-              value="4"
-            />
-            <label for="p2-white-card-4" class="card-pill">4</label>
-            <input
-              type="checkbox"
-              id="p2-white-card-5"
-              class="card"
-              value="5"
-            />
-            <label for="p2-white-card-5" class="card-pill">5</label>
-            <input
-              type="checkbox"
-              id="p2-white-card-6"
-              class="card"
-              value="6"
-            />
-            <label for="p2-white-card-6" class="card-pill">6</label>
-            <input
-              type="checkbox"
-              id="p2-white-card-7"
-              class="card"
-              value="7"
-            />
-            <label for="p2-white-card-7" class="card-pill">7</label>
-            <input
-              type="checkbox"
-              id="p2-white-card-8"
-              class="card"
-              value="8"
-            />
-            <label for="p2-white-card-8" class="card-pill">8</label>
-            <input
-              type="checkbox"
-              id="p2-white-card-9"
-              class="card"
-              value="9"
-            />
-            <label for="p2-white-card-9" class="card-pill">9</label>
-            <input
-              type="checkbox"
-              id="p2-white-card-10"
-              class="card"
-              value="10"
-            />
-            <label for="p2-white-card-10" class="card-pill">10</label>
+          <div class="card expedition-card" value="8">
+            <div class="text">
+              <div class="text-left">
+                <p>8</p>
+              </div>
+              <div class="text-right">
+                <p>8</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-        </div>
-        <div class="expedition-gold" data-color="gold">
-          <!-- <h3>gold</h3> -->
-          <div class="wagers">
-            <!-- <h4>Wagers</h4> -->
-            <input
-              type="checkbox"
-              id="p2-gold-wager-1"
-              class="wager"
-              value="1"
-            />
-            <label for="p2-gold-wager-1" class="wager-pill">🤝</label>
-            <input
-              type="checkbox"
-              id="p2-gold-wager-2"
-              class="wager"
-              value="2"
-            />
-            <label for="p2-gold-wager-2" class="wager-pill">🤝</label>
-            <input
-              type="checkbox"
-              id="p2-gold-wager-3"
-              class="wager"
-              value="3"
-            />
-            <label for="p2-gold-wager-3" class="wager-pill">🤝</label>
+          <div class="card expedition-card" value="9">
+            <div class="text">
+              <div class="text-left">
+                <p>9</p>
+              </div>
+              <div class="text-right">
+                <p>9</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
-          <div class="cards">
-            <!-- <h4>Cards</h4> -->
-            <input type="checkbox" id="p2-gold-card-2" class="card" value="2" />
-            <label for="p2-gold-card-2" class="card-pill">2</label>
-            <input type="checkbox" id="p2-gold-card-3" class="card" value="3" />
-            <label for="p2-gold-card-3" class="card-pill">3</label>
-            <input type="checkbox" id="p2-gold-card-4" class="card" value="4" />
-            <label for="p2-gold-card-4" class="card-pill">4</label>
-            <input type="checkbox" id="p2-gold-card-5" class="card" value="5" />
-            <label for="p2-gold-card-5" class="card-pill">5</label>
-            <input type="checkbox" id="p2-gold-card-6" class="card" value="6" />
-            <label for="p2-gold-card-6" class="card-pill">6</label>
-            <input type="checkbox" id="p2-gold-card-7" class="card" value="7" />
-            <label for="p2-gold-card-7" class="card-pill">7</label>
-            <input type="checkbox" id="p2-gold-card-8" class="card" value="8" />
-            <label for="p2-gold-card-8" class="card-pill">8</label>
-            <input type="checkbox" id="p2-gold-card-9" class="card" value="9" />
-            <label for="p2-gold-card-9" class="card-pill">9</label>
-            <input
-              type="checkbox"
-              id="p2-gold-card-10"
-              class="card"
-              value="10"
-            />
-            <label for="p2-gold-card-10" class="card-pill">10</label>
+          <div class="card expedition-card" value="10">
+            <div class="text">
+              <div class="text-left">
+                <p>10</p>
+              </div>
+              <div class="text-right">
+                <p>10</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
           </div>
         </div>
       </div>
-      <div class="scores">
-      <button onclick="calculateScore('player2')">
-        Calculate Player 2's Total Score
-      </button>
-      <div class="total-score">Total Score: 0</div>
-      <button onclick="resetCheckboxes('player2')">Reset</button>
+      <div class="expedition-green">
+        <div class="colour-card"></div>
+        <div class="card-stack">
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>2</p>
+              </div>
+              <div class="text-right">
+                <p>2</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="3">
+            <div class="text">
+              <div class="text-left">
+                <p>3</p>
+              </div>
+              <div class="text-right">
+                <p>3</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="4">
+            <div class="text">
+              <div class="text-left">
+                <p>4</p>
+              </div>
+              <div class="text-right">
+                <p>4</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="5">
+            <div class="text">
+              <div class="text-left">
+                <p>5</p>
+              </div>
+              <div class="text-right">
+                <p>5</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="6">
+            <div class="text">
+              <div class="text-left">
+                <p>6</p>
+              </div>
+              <div class="text-right">
+                <p>6</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="7">
+            <div class="text">
+              <div class="text-left">
+                <p>7</p>
+              </div>
+              <div class="text-right">
+                <p>7</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="8">
+            <div class="text">
+              <div class="text-left">
+                <p>8</p>
+              </div>
+              <div class="text-right">
+                <p>8</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="9">
+            <div class="text">
+              <div class="text-left">
+                <p>9</p>
+              </div>
+              <div class="text-right">
+                <p>9</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="10">
+            <div class="text">
+              <div class="text-left">
+                <p>10</p>
+              </div>
+              <div class="text-right">
+                <p>10</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+        </div>
+      </div>
+      <div class="expedition-blue">
+        <div class="colour-card"></div>
+        <div class="card-stack">
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="2">
+            <div class="text">
+              <div class="text-left">
+                <p>2</p>
+              </div>
+              <div class="text-right">
+                <p>2</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="3">
+            <div class="text">
+              <div class="text-left">
+                <p>3</p>
+              </div>
+              <div class="text-right">
+                <p>3</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="4">
+            <div class="text">
+              <div class="text-left">
+                <p>4</p>
+              </div>
+              <div class="text-right">
+                <p>4</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="5">
+            <div class="text">
+              <div class="text-left">
+                <p>5</p>
+              </div>
+              <div class="text-right">
+                <p>5</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="6">
+            <div class="text">
+              <div class="text-left">
+                <p>6</p>
+              </div>
+              <div class="text-right">
+                <p>6</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="7">
+            <div class="text">
+              <div class="text-left">
+                <p>7</p>
+              </div>
+              <div class="text-right">
+                <p>7</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="8">
+            <div class="text">
+              <div class="text-left">
+                <p>8</p>
+              </div>
+              <div class="text-right">
+                <p>8</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="9">
+            <div class="text">
+              <div class="text-left">
+                <p>9</p>
+              </div>
+              <div class="text-right">
+                <p>9</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="10">
+            <div class="text">
+              <div class="text-left">
+                <p>10</p>
+              </div>
+              <div class="text-right">
+                <p>10</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+        </div>
+      </div>
+      <div class="expedition-grey">
+        <div class="colour-card"></div>
+        <div class="card-stack">
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="2">
+            <div class="text">
+              <div class="text-left">
+                <p>2</p>
+              </div>
+              <div class="text-right">
+                <p>2</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="3">
+            <div class="text">
+              <div class="text-left">
+                <p>3</p>
+              </div>
+              <div class="text-right">
+                <p>3</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="4">
+            <div class="text">
+              <div class="text-left">
+                <p>4</p>
+              </div>
+              <div class="text-right">
+                <p>4</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="5">
+            <div class="text">
+              <div class="text-left">
+                <p>5</p>
+              </div>
+              <div class="text-right">
+                <p>5</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="6">
+            <div class="text">
+              <div class="text-left">
+                <p>6</p>
+              </div>
+              <div class="text-right">
+                <p>6</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="7">
+            <div class="text">
+              <div class="text-left">
+                <p>7</p>
+              </div>
+              <div class="text-right">
+                <p>7</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="8">
+            <div class="text">
+              <div class="text-left">
+                <p>8</p>
+              </div>
+              <div class="text-right">
+                <p>8</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="9">
+            <div class="text">
+              <div class="text-left">
+                <p>9</p>
+              </div>
+              <div class="text-right">
+                <p>9</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+          <div class="card expedition-card" value="10">
+            <div class="text">
+              <div class="text-left">
+                <p>10</p>
+              </div>
+              <div class="text-right">
+                <p>10</p>
+              </div>
+            </div>
+            <div class="card-decoration"></div>
+          </div>
+        </div>
+      </div>
+      <div class="expedition-gold">
+        <div class="colour-card"></div>
+        <div class="card-stack">
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration the-egyptian-desert"></div>
+          </div>
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration the-egyptian-desert"></div>
+          </div>
+          <div class="card wager" value="1">
+            <div class="text">
+              <div class="text-left">
+                <p>🤝</p>
+              </div>
+              <div class="text-right">
+                <p>🤝</p>
+              </div>
+            </div>
+            <div class="card-decoration the-egyptian-desert"></div>
+          </div>
+          <div class="card expedition-card" value="2">
+            <div class="text">
+              <div class="text-left">
+                <p>2</p>
+              </div>
+              <div class="text-right">
+                <p>2</p>
+              </div>
+            </div>
+            <div class="card-decoration the-egyptian-desert"></div>
+          </div>
+          <div class="card expedition-card" value="3">
+            <div class="text">
+              <div class="text-left">
+                <p>3</p>
+              </div>
+              <div class="text-right">
+                <p>3</p>
+              </div>
+            </div>
+            <div class="card-decoration the-egyptian-desert"></div>
+          </div>
+          <div class="card expedition-card" value="4">
+            <div class="text">
+              <div class="text-left">
+                <p>4</p>
+              </div>
+              <div class="text-right">
+                <p>4</p>
+              </div>
+            </div>
+            <div class="card-decoration the-egyptian-desert"></div>
+          </div>
+          <div class="card expedition-card" value="5">
+            <div class="text">
+              <div class="text-left">
+                <p>5</p>
+              </div>
+              <div class="text-right">
+                <p>5</p>
+              </div>
+            </div>
+            <div class="card-decoration the-egyptian-desert"></div>
+          </div>
+          <div class="card expedition-card" value="6">
+            <div class="text">
+              <div class="text-left">
+                <p>6</p>
+              </div>
+              <div class="text-right">
+                <p>6</p>
+              </div>
+            </div>
+            <div class="card-decoration the-egyptian-desert"></div>
+          </div>
+          <div class="card expedition-card" value="7">
+            <div class="text">
+              <div class="text-left">
+                <p>7</p>
+              </div>
+              <div class="text-right">
+                <p>7</p>
+              </div>
+            </div>
+            <div class="card-decoration the-egyptian-desert"></div>
+          </div>
+          <div class="card expedition-card" value="8">
+            <div class="text">
+              <div class="text-left">
+                <p>8</p>
+              </div>
+              <div class="text-right">
+                <p>8</p>
+              </div>
+            </div>
+            <div class="card-decoration the-egyptian-desert"></div>
+          </div>
+          <div class="card expedition-card" value="9">
+            <div class="text">
+              <div class="text-left">
+                <p>9</p>
+              </div>
+              <div class="text-right">
+                <p>9</p>
+              </div>
+            </div>
+            <div class="card-decoration the-egyptian-desert"></div>
+          </div>
+          <div class="card expedition-card" value="10">
+            <div class="text">
+              <div class="text-left">
+                <p>10</p>
+              </div>
+              <div class="text-right">
+                <p>10</p>
+              </div>
+            </div>
+            <div class="card-decoration the-egyptian-desert"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-    <!-- End of Player 2's Calculator -->
+
+    <button id="calculate-button">Calculate Scores</button>
+    <div id="score-display"></div>
+
+    <button id="resetCards">Reset Cards</button>
   </body>
-
   <script src="script.js"></script>
 </html>

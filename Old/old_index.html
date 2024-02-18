@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lost Cities Score Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="player" id="player1">
+      <div class="expeditions">
+        <div class="expedition-purple" data-color="purple">
+          <!-- <h3>purple</h3> -->
+          <div class="wagers">
+            <!-- <h4>Wagers</h4> -->
+            <input
+              type="checkbox"
+              id="purple-wager-1"
+              class="wager"
+              value="1"
+            />
+            <label for="purple-wager-1" class="wager-pill">🤝</label>
+            <input
+              type="checkbox"
+              id="purple-wager-2"
+              class="wager"
+              value="2"
+            />
+            <label for="purple-wager-2" class="wager-pill">🤝</label>
+            <input
+              type="checkbox"
+              id="purple-wager-3"
+              class="wager"
+              value="3"
+            />
+            <label for="purple-wager-3" class="wager-pill">🤝</label>
+          </div>
+          <div class="cards">
+            <!-- <h4>Cards</h4> -->
+            <input type="checkbox" id="purple-card-2" class="card" value="2" />
+            <label for="purple-card-2" class="card-pill">2</label>
+            <input type="checkbox" id="purple-card-3" class="card" value="3" />
+            <label for="purple-card-3" class="card-pill">3</label>
+            <input type="checkbox" id="purple-card-4" class="card" value="4" />
+            <label for="purple-card-4" class="card-pill">4</label>
+            <input type="checkbox" id="purple-card-5" class="card" value="5" />
+            <label for="purple-card-5" class="card-pill">5</label>
+            <input type="checkbox" id="purple-card-6" class="card" value="6" />
+            <label for="purple-card-6" class="card-pill">6</label>
+            <input type="checkbox" id="purple-card-7" class="card" value="7" />
+            <label for="purple-card-7" class="card-pill">7</label>
+            <input type="checkbox" id="purple-card-8" class="card" value="8" />
+            <label for="purple-card-8" class="card-pill">8</label>
+            <input type="checkbox" id="purple-card-9" class="card" value="9" />
+            <label for="purple-card-9" class="card-pill">9</label>
+            <input
+              type="checkbox"
+              id="purple-card-10"
+              class="card"
+              value="10"
+            />
+            <label for="purple-card-10" class="card-pill">10</label>
+          </div>
+        </div>
+        <div class="expedition-red" data-color="red">
+          <!-- <h3>red</h3> -->
+          <div class="wagers">
+            <!-- <h4>Wagers</h4> -->
+            <input type="checkbox" id="red-wager-1" class="wager" value="1" />
+            <label for="red-wager-1" class="wager-pill">🤝</label>
+            <input type="checkbox" id="red-wager-2" class="wager" value="2" />
+            <label for="red-wager-2" class="wager-pill">🤝</label>
+            <input type="checkbox" id="red-wager-3" class="wager" value="3" />
+            <label for="red-wager-3" class="wager-pill">🤝</label>
+          </div>
+          <div class="cards">
+            <!-- <h4>Cards</h4> -->
+            <input type="checkbox" id="red-card-2" class="card" value="2" />
+            <label for="red-card-2" class="card-pill">2</label>
+            <input type="checkbox" id="red-card-3" class="card" value="3" />
+            <label for="red-card-3" class="card-pill">3</label>
+            <input type="checkbox" id="red-card-4" class="card" value="4" />
+            <label for="red-card-4" class="card-pill">4</label>
+            <input type="checkbox" id="red-card-5" class="card" value="5" />
+            <label for="red-card-5" class="card-pill">5</label>
+            <input type="checkbox" id="red-card-6" class="card" value="6" />
+            <label for="red-card-6" class="card-pill">6</label>
+            <input type="checkbox" id="red-card-7" class="card" value="7" />
+            <label for="red-card-7" class="card-pill">7</label>
+            <input type="checkbox" id="red-card-8" class="card" value="8" />
+            <label for="red-card-8" class="card-pill">8</label>
+            <input type="checkbox" id="red-card-9" class="card" value="9" />
+            <label for="red-card-9" class="card-pill">9</label>
+            <input type="checkbox" id="red-card-10" class="card" value="10" />
+            <label for="red-card-10" class="card-pill">10</label>
+          </div>
+        </div>
+        <div class="expedition-green" data-color="green">
+          <!-- <h3>green</h3> -->
+          <div class="wagers">
+            <!-- <h4>Wagers</h4> -->
+            <input type="checkbox" id="green-wager-1" class="wager" value="1" />
+            <label for="green-wager-1" class="wager-pill">🤝</label>
+            <input type="checkbox" id="green-wager-2" class="wager" value="2" />
+            <label for="green-wager-2" class="wager-pill">🤝</label>
+            <input type="checkbox" id="green-wager-3" class="wager" value="3" />
+            <label for="green-wager-3" class="wager-pill">🤝</label>
+          </div>
+          <div class="cards">
+            <!-- <h4>Cards</h4> -->
+            <input type="checkbox" id="green-card-2" class="card" value="2" />
+            <label for="green-card-2" class="card-pill">2</label>
+            <input type="checkbox" id="green-card-3" class="card" value="3" />
+            <label for="green-card-3" class="card-pill">3</label>
+            <input type="checkbox" id="green-card-4" class="card" value="4" />
+            <label for="green-card-4" class="card-pill">4</label>
+            <input type="checkbox" id="green-card-5" class="card" value="5" />
+            <label for="green-card-5" class="card-pill">5</label>
+            <input type="checkbox" id="green-card-6" class="card" value="6" />
+            <label for="green-card-6" class="card-pill">6</label>
+            <input type="checkbox" id="green-card-7" class="card" value="7" />
+            <label for="green-card-7" class="card-pill">7</label>
+            <input type="checkbox" id="green-card-8" class="card" value="8" />
+            <label for="green-card-8" class="card-pill">8</label>
+            <input type="checkbox" id="green-card-9" class="card" value="9" />
+            <label for="green-card-9" class="card-pill">9</label>
+            <input type="checkbox" id="green-card-10" class="card" value="10" />
+            <label for="green-card-10" class="card-pill">10</label>
+          </div>
+        </div>
+        <div class="expedition-blue" data-color="blue">
+          <!-- <h3>blue</h3> -->
+          <div class="wagers">
+            <!-- <h4>Wagers</h4> -->
+            <input type="checkbox" id="blue-wager-1" class="wager" value="1" />
+            <label for="blue-wager-1" class="wager-pill">🤝</label>
+            <input type="checkbox" id="blue-wager-2" class="wager" value="2" />
+            <label for="blue-wager-2" class="wager-pill">🤝</label>
+            <input type="checkbox" id="blue-wager-3" class="wager" value="3" />
+            <label for="blue-wager-3" class="wager-pill">🤝</label>
+          </div>
+          <div class="cards">
+            <!-- <h4>Cards</h4> -->
+            <input type="checkbox" id="blue-card-2" class="card" value="2" />
+            <label for="blue-card-2" class="card-pill">2</label>
+            <input type="checkbox" id="blue-card-3" class="card" value="3" />
+            <label for="blue-card-3" class="card-pill">3</label>
+            <input type="checkbox" id="blue-card-4" class="card" value="4" />
+            <label for="blue-card-4" class="card-pill">4</label>
+            <input type="checkbox" id="blue-card-5" class="card" value="5" />
+            <label for="blue-card-5" class="card-pill">5</label>
+            <input type="checkbox" id="blue-card-6" class="card" value="6" />
+            <label for="blue-card-6" class="card-pill">6</label>
+            <input type="checkbox" id="blue-card-7" class="card" value="7" />
+            <label for="blue-card-7" class="card-pill">7</label>
+            <input type="checkbox" id="blue-card-8" class="card" value="8" />
+            <label for="blue-card-8" class="card-pill">8</label>
+            <input type="checkbox" id="blue-card-9" class="card" value="9" />
+            <label for="blue-card-9" class="card-pill">9</label>
+            <input type="checkbox" id="blue-card-10" class="card" value="10" />
+            <label for="blue-card-10" class="card-pill">10</label>
+          </div>
+        </div>
+        <div class="expedition-white" data-color="white">
+          <!-- <h3>white</h3> -->
+          <div class="wagers">
+            <!-- <h4>Wagers</h4> -->
+            <input type="checkbox" id="white-wager-1" class="wager" value="1" />
+            <label for="white-wager-1" class="wager-pill">🤝</label>
+            <input type="checkbox" id="white-wager-2" class="wager" value="2" />
+            <label for="white-wager-2" class="wager-pill">🤝</label>
+            <input type="checkbox" id="white-wager-3" class="wager" value="3" />
+            <label for="white-wager-3" class="wager-pill">🤝</label>
+          </div>
+          <div class="cards">
+            <!-- <h4>Cards</h4> -->
+            <input type="checkbox" id="white-card-2" class="card" value="2" />
+            <label for="white-card-2" class="card-pill">2</label>
+            <input type="checkbox" id="white-card-3" class="card" value="3" />
+            <label for="white-card-3" class="card-pill">3</label>
+            <input type="checkbox" id="white-card-4" class="card" value="4" />
+            <label for="white-card-4" class="card-pill">4</label>
+            <input type="checkbox" id="white-card-5" class="card" value="5" />
+            <label for="white-card-5" class="card-pill">5</label>
+            <input type="checkbox" id="white-card-6" class="card" value="6" />
+            <label for="white-card-6" class="card-pill">6</label>
+            <input type="checkbox" id="white-card-7" class="card" value="7" />
+            <label for="white-card-7" class="card-pill">7</label>
+            <input type="checkbox" id="white-card-8" class="card" value="8" />
+            <label for="white-card-8" class="card-pill">8</label>
+            <input type="checkbox" id="white-card-9" class="card" value="9" />
+            <label for="white-card-9" class="card-pill">9</label>
+            <input type="checkbox" id="white-card-10" class="card" value="10" />
+            <label for="white-card-10" class="card-pill">10</label>
+          </div>
+        </div>
+        <div class="expedition-gold" data-color="gold">
+          <!-- <h3>gold</h3> -->
+          <div class="wagers">
+            <!-- <h4>Wagers</h4> -->
+            <input type="checkbox" id="gold-wager-1" class="wager" value="1" />
+            <label for="gold-wager-1" class="wager-pill">🤝</label>
+            <input type="checkbox" id="gold-wager-2" class="wager" value="2" />
+            <label for="gold-wager-2" class="wager-pill">🤝</label>
+            <input type="checkbox" id="gold-wager-3" class="wager" value="3" />
+            <label for="gold-wager-3" class="wager-pill">🤝</label>
+          </div>
+          <div class="cards">
+            <!-- <h4>Cards</h4> -->
+            <input type="checkbox" id="gold-card-2" class="card" value="2" />
+            <label for="gold-card-2" class="card-pill">2</label>
+            <input type="checkbox" id="gold-card-3" class="card" value="3" />
+            <label for="gold-card-3" class="card-pill">3</label>
+            <input type="checkbox" id="gold-card-4" class="card" value="4" />
+            <label for="gold-card-4" class="card-pill">4</label>
+            <input type="checkbox" id="gold-card-5" class="card" value="5" />
+            <label for="gold-card-5" class="card-pill">5</label>
+            <input type="checkbox" id="gold-card-6" class="card" value="6" />
+            <label for="gold-card-6" class="card-pill">6</label>
+            <input type="checkbox" id="gold-card-7" class="card" value="7" />
+            <label for="gold-card-7" class="card-pill">7</label>
+            <input type="checkbox" id="gold-card-8" class="card" value="8" />
+            <label for="gold-card-8" class="card-pill">8</label>
+            <input type="checkbox" id="gold-card-9" class="card" value="9" />
+            <label for="gold-card-9" class="card-pill">9</label>
+            <input type="checkbox" id="gold-card-10" class="card" value="10" />
+            <label for="gold-card-10" class="card-pill">10</label>
+          </div>
+        </div>
+      </div>
+      <div class="scores">
+        <button onclick="calculateScore('player1')">
+          Calculate Player 1's Total Score
+        </button>
+        <div class="total-score">Total Score: 0</div>
+        <button onclick="resetCheckboxes('player1')">Reset</button>
+      </div>
+      <!-- ... Other expeditions for Player 1 ... -->
+    </div>
+    <!-- End of Player 1's Calculator -->
+
+    <!-- Button -->
+    <div class="flip-button">
+      <button onclick="toggleExpeditionOrder()">Toggle Expedition Order</button>
+    </div>
+  </body>
+
+</html>

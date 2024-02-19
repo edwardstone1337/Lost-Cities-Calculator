@@ -14,9 +14,24 @@ document.addEventListener("keydown", function (event) {
 // This function removes the 'active' class from all cards, effectively 'resetting' them
 function resetCards() {
   document.querySelectorAll(".card.active").forEach((card) => {
-    card.classList.remove("active"); // Remove 'active' class from each card
+    card.classList.remove("active");
   });
+
+  const scoreDisplay = document.getElementById("score-display");
+  if (scoreDisplay) {
+    scoreDisplay.innerHTML = ''; // Clear the inner HTML of the score display
+    scoreDisplay.style.display = 'none'; // Hide the score display
+  }
 }
+
+// Find the button by its ID
+var resetCardsButton = document.getElementById('resetCards');
+
+// Add a click event listener to the button
+resetCardsButton.addEventListener('click', function() {
+    resetCards(); // Call the resetCards function when the button is clicked
+});
+
 
 // Event listeners for card interactions and buttons
 // This section manages the behavior when interacting with the cards and buttons on the page
@@ -138,4 +153,12 @@ function calculateScores() {
   scoreDisplayText += `<div class='overall-total-score'><strong>Total Score: ${totalScore}</strong></div>`;
 
   document.getElementById("score-display").innerHTML = scoreDisplayText;
+
+  const scoreDisplay = document.getElementById("score-display");
+  if (scoreDisplay) {
+    scoreDisplay.style.display = 'block'; // Show the score display
+    // Update the inner HTML of scoreDisplay with the new scores
+    scoreDisplay.innerHTML = scoreDisplayText;
+  }
 }
+

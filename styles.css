@@ -35,14 +35,104 @@ body {
   background-size: cover;
 }
 
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  height: auto;
+  max-width: 375px;
+}
+
+.logo-button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .logo {
   background: url(Images/lost-cities-logo.png) no-repeat center;
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  background-position: center; /* Centers the image in the container */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  background-position: center;
+  /* Centers the image in the container */
   background-size: contain;
-  width: 188.4px;
-  height: 120px;
+  width: 128px;
+  height: 80px;
   flex-shrink: 0;
+}
+
+.button-container {
+  background-color: white;
+  /* Light background for contrast */
+  padding: 0px;
+  /* Or any other value that suits your design */
+  display: inline-block;
+  border-radius: 8px;
+  /* Or flex, block, etc., as per your layout */
+  /* Add any other styling as needed */
+}
+
+.button-style {
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(
+    107deg,
+    #fece42 0%,
+    #feda43 21.5%,
+    #fbd37d 40.5%,
+    #f1a005 79.5%,
+    #efc318 100%
+  );
+
+  border-radius: 8px;
+
+  border: 1px solid transparent;
+  /* border-image: linear-gradient(
+    to bottom,
+    rgba(170, 61, 16, 1),
+    rgba(107, 47, 47, 1),
+    rgba(64, 36, 42, 1),
+    rgba(38, 30, 66, 1)
+  );
+  border-image-slice: 1; */
+
+  -webkit-mask-image: linear-gradient(
+    45deg,
+    #fff 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    #fff 75%
+  );
+  mask-image: linear-gradient(
+    45deg,
+    #fff 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    #fff 75%
+  );
+  -webkit-mask-size: 800%;
+  mask-size: 800%;
+  -webkit-mask-position: 0;
+  mask-position: 0;
+
+  color: #0b0908;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.button-style:hover {
+  transition: mask-position 1s ease, -webkit-mask-position 1s ease;
+  /* Reduced duration for faster animation */
+  -webkit-mask-position: 120%;
+  mask-position: 120%;
+  opacity: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* transform: scale(1.05); */
 }
 
 .container {
@@ -50,9 +140,6 @@ body {
   flex-direction: row;
   gap: 6px;
   align-self: stretch;
-  max-width: 375px;
-  width: 100%; /* Add this line */
-  margin: 0 auto; /* Add this line */
 }
 
 div[class^="expedition-"] {
@@ -73,8 +160,10 @@ div[class^="expedition-"] {
   gap: 8px;
   align-self: stretch;
   border-radius: 4px;
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  background-position: center; /* Centers the image in the container */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  background-position: center;
+  /* Centers the image in the container */
   background-size: contain;
 }
 
@@ -87,7 +176,7 @@ div[class^="expedition-"] {
 }
 
 .card-stack > *:not(:first-child) {
-  margin-top: -24px;
+  margin-top: -32px;
 }
 
 .card {
@@ -128,12 +217,14 @@ div[class^="expedition-"] {
 }
 
 .card.active:hover {
-  transform: translateY(-8px) rotateY(180deg); /* Only lift, keep the flip */
+  transform: translateY(-8px) rotateY(180deg);
+  /* Only lift, keep the flip */
 }
 
 .card.active .text {
   transform: rotateY(180deg);
-  backface-visibility: hidden; /* This ensures the text doesn't show through the back of the card */
+  backface-visibility: hidden;
+  /* This ensures the text doesn't show through the back of the card */
 }
 
 .card:hover ~ .card {
@@ -175,7 +266,8 @@ div[class^="expedition-"] {
   flex: 1 0 0;
   align-self: stretch;
   border-radius: 4px;
-  transition: transform 0.3s ease, border 0.3s ease; /* This is already correctly set up */
+  transition: transform 0.3s ease, border 0.3s ease;
+  /* This is already correctly set up */
 }
 
 /* Expedition Purple */
@@ -444,7 +536,13 @@ div[class^="expedition-"] {
 
 /*Scores*/
 
+#calculate-button {
+  width: 100%;
+  height: 48px;
+}
+
 .score-display {
+  display: none;
   width: 100%;
 }
 
@@ -457,7 +555,7 @@ div[class^="expedition-"] {
 }
 
 .scores-columns {
-  display: flex;
+  display: none;
   margin-bottom: 15px;
   color: white;
   align-items: center;
@@ -466,21 +564,23 @@ div[class^="expedition-"] {
 }
 
 [class^="color-score-column"] {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  flex: 1; /* Equal space distribution */
+  flex: 1;
+  /* Equal space distribution */
   width: 57.5px;
 }
 
 .color-score-total {
-  /* display: none; */
+  display: none;
 }
 
 .color-score-bonus {
-  /* display: none; */
+  display: none;
 }
+
 .overall-total-score {
   color: var(--white);
   /* display: none; */
@@ -488,12 +588,14 @@ div[class^="expedition-"] {
 
 @media (prefers-reduced-motion: reduce) {
   .card {
-    transition: none; /* Disables transitions */
+    transition: none;
+    /* Disables transitions */
   }
 
   .card:hover,
   .card.active,
   .card.active:hover {
-    transform: none; /* Disables transformations on hover/active states */
+    transform: none;
+    /* Disables transformations on hover/active states */
   }
 }

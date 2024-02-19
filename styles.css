@@ -1,18 +1,19 @@
 :root {
-  --purple: rgb(96 81 139);
-  --purple-accent: rgba(96 81 139 / 0.1);
-  --red: rgb(203 60 18);
-  --red-accent: rgba(203 60 18 / 0.1);
-  --green: rgb(128 165 46);
-  --green-accent: rgba(128 165 46 / 0.1);
-  --blue: rgb(57 101 157);
-  --blue-accent: rgba(57 101 157 / 0.1);
-  --grey: rgb(158 158 158);
-  --grey-accent: rgba(158 158 158 / 0.1);
-  --gold: rgb(240 176 39);
-  --gold-accent: rgba(248 182 40 / 0.1);
+  --purple: rgb(213 139 186);
+  --red: rgb(239 134 0);
+  --green: rgb(143 213 154);
+  --blue: rgb(13 182 239);
+  --grey: rgb(255 255 255);
+  --gold: rgb(248 182 2);
   --white: rgb(255 255 255);
   --black: rgb(24 23 23);
+  --blue-accent: rgba(57 101 157 / 0.1);
+  --purple-accent: rgba(96 81 139 / 0.1);
+  --red-accent: rgba(203 60 18 / 0.1);
+  --green-accent: rgba(128 165 46 / 0.1);
+  --grey-accent: rgba(158 158 158 / 0.1);
+  --gold-accent: rgba(248 182 40 / 0.1);
+  --dark-grey: rgba(29, 29, 29, 1);
 }
 
 * {
@@ -30,6 +31,18 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  background: url(Images/background-optimised.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.logo {
+  background: url(Images/lost-cities-logo.png) no-repeat center;
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image in the container */
+  background-size: contain;
+  width: 188.4px;
+  height: 120px;
+  flex-shrink: 0;
 }
 
 .container {
@@ -50,7 +63,7 @@ div[class^="expedition-"] {
   flex: 1 0 0;
 }
 
-.colour-card {
+.exp-icon {
   display: flex;
   height: 80px;
   padding: 8px;
@@ -60,7 +73,9 @@ div[class^="expedition-"] {
   gap: 8px;
   align-self: stretch;
   border-radius: 4px;
-  background: var(--Purple, #60518b);
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image in the container */
+  background-size: contain;
 }
 
 .card-stack {
@@ -77,47 +92,17 @@ div[class^="expedition-"] {
 
 .card {
   display: flex;
-  height: 72px;
-  padding: 6px;
+  height: 80px;
+  padding: 4px;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
   align-self: stretch;
   border-radius: 4px;
-  border: 1px solid #c1c1c1;
-  background: var(--White, #fff);
-  box-shadow: 0px -4px 16px 0px rgba(0, 0, 0, 0.08),
-    0px -1px 1px 0px rgba(0, 0, 0, 0.05);
-  position: relative;
-  transition: transform 0.3s ease, border 0.3s ease;
-  transform-style: preserve-3d;
-}
-
-.card-stack {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  align-self: stretch;
-  perspective: 1000px;
-}
-
-.card-stack > *:not(:first-child) {
-  margin-top: -24px;
-}
-
-.card {
-  display: flex;
-  height: 72px;
-  padding: 6px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  align-self: stretch;
-  border-radius: 4px;
-  border: 1px solid #c1c1c1;
-  background: var(--White, #fff);
-  box-shadow: 0px -4px 16px 0px rgba(0, 0, 0, 0.08),
-    0px -1px 1px 0px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: var(--dark-grey, #363434);
+  box-shadow: 0px -16px 16px -4px rgba(0, 0, 0, 0.5),
+    0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
   position: relative;
   transition: transform 0.3s ease, border 0.3s ease;
   transform-style: preserve-3d;
@@ -136,17 +121,14 @@ div[class^="expedition-"] {
 
 .card.active {
   border-radius: 4px;
-  border: 1px solid var(--Gold, #f0b027);
-  background: #363434;
-  transform: rotateY(180deg); /* Flip without lift */
+  transform: rotateY(180deg);
+  background-color: #000;
+  box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
+    0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
 }
 
 .card.active:hover {
   transform: translateY(-8px) rotateY(180deg); /* Only lift, keep the flip */
-}
-
-.card.active .text p {
-  color: white;
 }
 
 .card.active .text {
@@ -166,111 +148,299 @@ div[class^="expedition-"] {
 }
 
 .text-left {
-  color: var(--Black, #181717);
+  color: var(--white);
   text-align: right;
   font-family: Inter;
-  font-size: 12px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 
 .text-right {
-  color: var(--Black, #181717);
+  color: var(--white);
   text-align: right;
   font-family: Inter;
-  font-size: 12px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 
-.card-decoration {
+.card-image {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex: 1 0 0;
   align-self: stretch;
   border-radius: 4px;
+  transition: transform 0.3s ease, border 0.3s ease; /* This is already correctly set up */
 }
 
-.card.active .card-decoration {
-  border: 0.5px solid var(--White, #fff);
+/* Expedition Purple */
+.expedition-purple .exp-icon {
+  background-image: url(Images/purple-expedition.png);
 }
 
-.expedition-purple .card.active .card-decoration,
-.expedition-purple .colour-card {
-  background-color: var(--purple);
+.expedition-purple .card:hover {
+  border-radius: 4px;
+  border: 0.5px solid white;
+  background: #000;
+  box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
+    0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
 }
 
-.expedition-purple .card:not(.active) .card-decoration {
-  background-color: var(--purple-accent);
+.expedition-purple .card:hover .card-image {
+  background: url(Images/purple-card.png), cover no-repeat;
+  filter: none;
+  border: 0.5px solid white;
+  opacity: 0.5;
 }
 
-.expedition-red .card.active .card-decoration,
-.expedition-red .colour-card {
-  background-color: var(--red);
+.expedition-purple .card.active {
+  border-radius: 4px;
+  border: 2px solid var(--purple, #d58bba);
+  box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
+    0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
 }
 
-.expedition-red .card:not(.active) .card-decoration {
-  background-color: var(--red-accent);
+.expedition-purple .card-image {
+  opacity: 0.25;
+  background: url(Images/purple-card.png), lightgray 50% / cover no-repeat;
+  filter: grayscale(100%);
 }
 
-.expedition-green .card.active .card-decoration,
-.expedition-green .colour-card {
-  background-color: var(--green);
+.expedition-purple .card.active .card-image {
+  opacity: 1;
+  background: url(Images/purple-card.png), cover no-repeat;
+  filter: none;
+  border: 1px solid var(--purple, #d58bba);
 }
 
-.expedition-green .card:not(.active) .card-decoration {
-  background-color: var(--green-accent);
+.expedition-purple .card.active .text p {
+  color: var(--purple);
 }
 
-.expedition-blue .card.active .card-decoration,
-.expedition-blue .colour-card {
-  background-color: var(--blue);
+/* Expedition green */
+.expedition-green .exp-icon {
+  background-image: url(Images/green-expedition.png);
 }
 
-.expedition-blue .card:not(.active) .card-decoration {
-  background-color: var(--blue-accent);
+.expedition-green .card:hover {
+  border-radius: 4px;
+  border: 0.5px solid white;
+  background: #000;
+  box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
+    0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
 }
 
-.expedition-grey .card.active .card-decoration,
-.expedition-grey .colour-card {
-  background-color: var(--grey);
+.expedition-green .card:hover .card-image {
+  background: url(Images/green-card.png), cover no-repeat;
+  filter: none;
+  border: 0.5px solid white;
+  opacity: 0.5;
 }
 
-.expedition-grey .card:not(.active) .card-decoration {
-  background-color: var(--grey-accent);
+.expedition-green .card.active {
+  border-radius: 4px;
+  border: 2px solid var(--green, #d58bba);
+  box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
+    0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
 }
 
-.expedition-gold .card.active .card-decoration,
-.expedition-gold .colour-card {
-  background-color: var(--gold);
+.expedition-green .card-image {
+  opacity: 0.25;
+  background: url(Images/green-card.png), lightgray 50% / cover no-repeat;
+  filter: grayscale(100%);
 }
 
-.expedition-gold .card:not(.active) .card-decoration {
-  background-color: var(--gold-accent);
+.expedition-green .card.active .card-image {
+  opacity: 1;
+  background: url(Images/green-card.png), cover no-repeat;
+  filter: none;
+  border: 1px solid var(--green, #d58bba);
 }
 
-/* .the-nebula-of-forgotten-worlds {
-  background: rgba(96, 81, 139, 0.1);
+.expedition-green .card.active .text p {
+  color: var(--green);
 }
 
-.a-mysterious-volcano {
-  background: rgba(203, 60, 18, 0.1);
+/* Expedition red */
+.expedition-red .exp-icon {
+  background-image: url(Images/red-expedition.png);
 }
 
-.the-central-american-rainforest {
-  background: rgba(128, 165, 46, 0.1);
+.expedition-red .card:hover {
+  border-radius: 4px;
+  border: 0.5px solid white;
+  background: #000;
+  box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
+    0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
 }
 
-.the-bottom-of-the-sea {
-  background: rgba(57, 101, 157, 0.1);
-}
-.the-himalayan-mountains {
-  background: rgba(158, 158, 158, 0.1);
+.expedition-red .card:hover .card-image {
+  background: url(Images/red-card.png), cover no-repeat;
+  filter: none;
+  border: 0.5px solid white;
+  opacity: 0.5;
 }
 
-.the-egyptian-desert {
-  background: rgba(248, 182, 40, 0.1);
-} */
+.expedition-red .card.active {
+  border-radius: 4px;
+  border: 2px solid var(--red, #d58bba);
+  box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
+    0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
+}
+
+.expedition-red .card-image {
+  opacity: 0.25;
+  background: url(Images/red-card.png), lightgray 50% / cover no-repeat;
+  filter: grayscale(100%);
+}
+
+.expedition-red .card.active .card-image {
+  opacity: 1;
+  background: url(Images/red-card.png), cover no-repeat;
+  filter: none;
+  border: 1px solid var(--red, #d58bba);
+}
+
+.expedition-red .card.active .text p {
+  color: var(--red);
+}
+
+/* Expedition blue */
+.expedition-blue .exp-icon {
+  background-image: url(Images/blue-expedition.png);
+}
+
+.expedition-blue .card:hover {
+  border-radius: 4px;
+  border: 0.5px solid white;
+  background: #000;
+  box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
+    0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
+}
+
+.expedition-blue .card:hover .card-image {
+  background: url(Images/blue-card.png), cover no-repeat;
+  filter: none;
+  border: 0.5px solid white;
+  opacity: 0.5;
+}
+
+.expedition-blue .card.active {
+  border-radius: 4px;
+  border: 2px solid var(--blue, #d58bba);
+  box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
+    0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
+}
+
+.expedition-blue .card-image {
+  opacity: 0.25;
+  background: url(Images/blue-card.png), lightgray 50% / cover no-repeat;
+  filter: grayscale(100%);
+}
+
+.expedition-blue .card.active .card-image {
+  opacity: 1;
+  background: url(Images/blue-card.png), cover no-repeat;
+  filter: none;
+  border: 1px solid var(--blue, #d58bba);
+}
+
+.expedition-blue .card.active .text p {
+  color: var(--blue);
+}
+
+/* Expedition grey */
+.expedition-grey .exp-icon {
+  background-image: url(Images/grey-expedition.png);
+}
+
+.expedition-grey .card:hover {
+  border-radius: 4px;
+  border: 0.5px solid white;
+  background: #000;
+  box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
+    0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
+}
+
+.expedition-grey .card:hover .card-image {
+  background: url(Images/grey-card.png), cover no-repeat;
+  filter: none;
+  border: 0.5px solid white;
+  opacity: 0.5;
+}
+
+.expedition-grey .card.active {
+  border-radius: 4px;
+  border: 2px solid var(--grey, #d58bba);
+  box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
+    0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
+}
+
+.expedition-grey .card-image {
+  opacity: 0.25;
+  background: url(Images/grey-card.png), lightgray 50% / cover no-repeat;
+  filter: grayscale(100%);
+}
+
+.expedition-grey .card.active .card-image {
+  opacity: 1;
+  background: url(Images/grey-card.png), cover no-repeat;
+  filter: none;
+  border: 1px solid var(--grey, #d58bba);
+}
+
+.expedition-grey .card.active .text p {
+  color: var(--grey);
+}
+
+/* Expedition gold */
+.expedition-gold .exp-icon {
+  background-image: url(Images/gold-expedition.png);
+}
+
+.expedition-gold .card:hover {
+  border-radius: 4px;
+  border: 0.5px solid white;
+  background: #000;
+  box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
+    0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
+}
+
+.expedition-gold .card:hover .card-image {
+  background: url(Images/gold-card.png), cover no-repeat;
+  filter: none;
+  border: 0.5px solid white;
+  opacity: 0.5;
+}
+
+.expedition-gold .card.active {
+  border-radius: 4px;
+  border: 2px solid var(--gold, #d58bba);
+  box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
+    0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
+}
+
+.expedition-gold .card-image {
+  opacity: 0.25;
+  background: url(Images/gold-card.png), lightgray 50% / cover no-repeat;
+  filter: grayscale(100%);
+}
+
+.expedition-gold .card.active .card-image {
+  opacity: 1;
+  background: url(Images/gold-card.png), cover no-repeat;
+  filter: none;
+  border: 1px solid var(--gold, #d58bba);
+}
+
+.expedition-gold .card.active .text p {
+  color: var(--gold);
+}
+
+#score-display {
+  color: white;
+}

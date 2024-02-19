@@ -1,42 +1,34 @@
 // Event listener for keyboard inputs
-// This listens for any keypresses and triggers the corresponding function
 document.addEventListener("keydown", function (event) {
   if (event.key === "r" || event.key === "R") {
     resetCards(); // Call resetCards if 'R' is pressed
   } else if (event.key === "Enter") {
     calculateScores(); // Call calculateScores if 'Enter' is pressed
+    showModal(); // Show the modal when Calculate Scores is executed
   } else if (event.key === "s" || event.key === "S") {
     swapOrder(); // Call swapOrder if 'S' is pressed
   }
 });
 
 // Function to reset cards
-// This function removes the 'active' class from all cards, effectively 'resetting' them
 function resetCards() {
   document.querySelectorAll(".card.active").forEach((card) => {
     card.classList.remove("active");
   });
 
-  const scoreDisplay = document.getElementById("score-display");
-  if (scoreDisplay) {
-    scoreDisplay.innerHTML = ''; // Clear the inner HTML of the score display
-    scoreDisplay.style.display = 'none'; // Hide the score display
-  }
+  // Do not clear or hide the score display here
+  // Let the calculateScores function handle the score display updates
 }
 
 // Find the button by its ID
-var resetCardsButton = document.getElementById('resetCards');
+var resetCardsButton = document.getElementById("resetCards");
 
 // Add a click event listener to the button
-resetCardsButton.addEventListener('click', function() {
-    resetCards(); // Call the resetCards function when the button is clicked
+resetCardsButton.addEventListener("click", function () {
+  resetCards(); // Call the resetCards function when the button is clicked
 });
 
-
-// Event listeners for card interactions and buttons
-// This section manages the behavior when interacting with the cards and buttons on the page
-
-// Add click event listener to each card element
+// Event listeners for card interactions
 document.querySelectorAll(".card").forEach((card) => {
   card.addEventListener("click", function () {
     this.classList.toggle("active"); // Toggle 'active' class on click
@@ -50,6 +42,9 @@ document.querySelectorAll(".card").forEach((card) => {
   });
 });
 
+let isSwapped = false;
+
+// Function to swap order
 function swapOrder() {
   const expeditions = document.querySelectorAll('div[class^="expedition-"]');
   isSwapped = !isSwapped; // Toggle the state of isSwapped
@@ -69,23 +64,12 @@ function swapOrder() {
       ? swappedOrder.toString()
       : baseOrder[expedition.className].toString(); // Apply new order
   });
-
-  // Call calculateScores to update the scores based on new order
-  calculateScores();
 }
 
-// Flag variable to track the swap state of expeditions
-let isSwapped = false;
-
-// Add click event listener to the 'Calculate Scores' button
+// Add click event listener to the 'Swap Order' button
 document.getElementById("swapOrder").addEventListener("click", swapOrder);
-document
-  .getElementById("calculate-button")
-  .addEventListener("click", calculateScores);
 
 // Function to calculate and display scores
-// This function calculates the scores based on the active cards in each expedition
-
 function calculateScores() {
   // Select all expedition divs and sort them based on their CSS order
   const expeditions = Array.from(
@@ -147,18 +131,53 @@ function calculateScores() {
     colorColumnsHtml += `</div>`;
   });
 
-  // Construct the final display text with scores and total score
   let scoreDisplayText = `<div class='scores-heading'>Scores</div>`;
   scoreDisplayText += `<div class='scores-columns'>${colorColumnsHtml}</div>`;
   scoreDisplayText += `<div class='overall-total-score'><strong>Total Score: ${totalScore}</strong></div>`;
 
+  // Update score-display content here
   document.getElementById("score-display").innerHTML = scoreDisplayText;
-
-  const scoreDisplay = document.getElementById("score-display");
-  if (scoreDisplay) {
-    scoreDisplay.style.display = 'block'; // Show the score display
-    // Update the inner HTML of scoreDisplay with the new scores
-    scoreDisplay.innerHTML = scoreDisplayText;
-  }
 }
 
+// Add click event listener to the 'Calculate Scores' button
+document
+  .getElementById("calculate-button")
+  .addEventListener("click", function () {
+    calculateScores();
+    showModal(); // Show the modal when Calculate Scores is clicked
+  });
+
+// Functions to show and hide modal
+function showModal() {
+  var modal = document.getElementById("scoreModal");
+  modal.style.display = "block";
+}
+
+function hideModal() {
+  var modal = document.getElementById("scoreModal");
+  modal.style.display = "none";
+}
+
+// Get the modal
+var modal = document.getElementById("scoreModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  hideModal();
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    hideModal();
+  }
+};
+
+// Add click event listener to the Reset Cards button
+var resetCardsButton = document.getElementById("resetCards");
+resetCardsButton.addEventListener("click", function () {
+  resetCards();
+});

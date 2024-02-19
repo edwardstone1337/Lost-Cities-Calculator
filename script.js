@@ -1,105 +1,95 @@
-// This section adds a click event listener to every element with the class 'card'.
-// When a card is clicked, it toggles the 'active' class and adjusts the rotation.
+// Event listener for keyboard inputs
+// This listens for any keypresses and triggers the corresponding function
+document.addEventListener("keydown", function (event) {
+  if (event.key === "r" || event.key === "R") {
+    resetCards(); // Call resetCards if 'R' is pressed
+  } else if (event.key === "Enter") {
+    calculateScores(); // Call calculateScores if 'Enter' is pressed
+  } else if (event.key === "s" || event.key === "S") {
+    swapOrder(); // Call swapOrder if 'S' is pressed
+  }
+});
+
+// Function to reset cards
+// This function removes the 'active' class from all cards, effectively 'resetting' them
+function resetCards() {
+  document.querySelectorAll(".card.active").forEach((card) => {
+    card.classList.remove("active"); // Remove 'active' class from each card
+  });
+}
+
+// Event listeners for card interactions and buttons
+// This section manages the behavior when interacting with the cards and buttons on the page
+
+// Add click event listener to each card element
 document.querySelectorAll(".card").forEach((card) => {
   card.addEventListener("click", function () {
-    // Toggle the 'active' class on the clicked card
-    this.classList.toggle("active");
+    this.classList.toggle("active"); // Toggle 'active' class on click
 
-    // If the card is active, set its rotation to 180 degrees; otherwise, set it to 0 degrees
+    // Rotate the card based on whether it's active or not
     if (this.classList.contains("active")) {
-      this.style.setProperty("--rotate-y", "180deg");
+      this.style.setProperty("--rotate-y", "180deg"); // Rotate card to 180 degrees if active
     } else {
-      this.style.setProperty("--rotate-y", "0deg");
+      this.style.setProperty("--rotate-y", "0deg"); // Rotate card back to 0 degrees if not active
     }
   });
 });
 
-// This section adds a click event listener to the button with the ID 'resetCards'.
-// When clicked, it removes the 'active' class from all cards that currently have it.
-document.getElementById("resetCards").addEventListener("click", function () {
-  // Select all cards that are active and remove the 'active' class
-  document.querySelectorAll(".card.active").forEach((card) => {
-    card.classList.remove("active");
-  });
-});
+function swapOrder() {
+  const expeditions = document.querySelectorAll('div[class^="expedition-"]');
+  isSwapped = !isSwapped; // Toggle the state of isSwapped
 
-// A flag variable to keep track of whether the expeditions are swapped or not.
+  expeditions.forEach((expedition) => {
+    const baseOrder = {
+      "expedition-purple": 1,
+      "expedition-red": 2,
+      "expedition-green": 3,
+      "expedition-blue": 4,
+      "expedition-grey": 5,
+      "expedition-gold": 6,
+    };
+
+    const swappedOrder = 7 - baseOrder[expedition.className]; // Calculate new order for swapping
+    expedition.style.order = isSwapped
+      ? swappedOrder.toString()
+      : baseOrder[expedition.className].toString(); // Apply new order
+  });
+
+  // Call calculateScores to update the scores based on new order
+  calculateScores();
+}
+
+// Flag variable to track the swap state of expeditions
 let isSwapped = false;
 
-// This section adds a click event listener to the button with the ID 'swapOrder'.
-// When clicked, it changes the order of the expedition columns.
-document.getElementById("swapOrder").addEventListener("click", function () {
-  // Select all elements that start with the class name 'expedition-'
-  const expeditions = document.querySelectorAll('div[class^="expedition-"]');
-
-  // Iterate over each expedition element
-  expeditions.forEach((expedition) => {
-    // Check if expeditions are not swapped
-    if (!isSwapped) {
-      // Switch to swapped order based on the class name of the expedition
-      switch (expedition.className) {
-        case "expedition-purple":
-          expedition.style.order = "6";
-          break;
-        case "expedition-red":
-          expedition.style.order = "5";
-          break;
-        case "expedition-green":
-          expedition.style.order = "4";
-          break;
-        case "expedition-blue":
-          expedition.style.order = "3";
-          break;
-        case "expedition-grey":
-          expedition.style.order = "2";
-          break;
-        case "expedition-gold":
-          expedition.style.order = "1";
-          break;
-      }
-    } else {
-      // Switch back to original order based on the class name of the expedition
-      switch (expedition.className) {
-        case "expedition-purple":
-          expedition.style.order = "1";
-          break;
-        case "expedition-red":
-          expedition.style.order = "2";
-          break;
-        case "expedition-green":
-          expedition.style.order = "3";
-          break;
-        case "expedition-blue":
-          expedition.style.order = "4";
-          break;
-        case "expedition-grey":
-          expedition.style.order = "5";
-          break;
-        case "expedition-gold":
-          expedition.style.order = "6";
-          break;
-      }
-    }
-  });
-
-  // Toggle the isSwapped flag to indicate the current state of the order
-  isSwapped = !isSwapped;
-});
-
+// Add click event listener to the 'Calculate Scores' button
+document.getElementById("swapOrder").addEventListener("click", swapOrder);
 document
   .getElementById("calculate-button")
   .addEventListener("click", calculateScores);
 
-document
-  .getElementById("calculate-button")
-  .addEventListener("click", calculateScores);
+// Function to calculate and display scores
+// This function calculates the scores based on the active cards in each expedition
 
 function calculateScores() {
-  const colors = ["red", "blue", "green", "grey", "purple", "gold"];
-  let totalScore = 0;
-  let scoreDisplayText = "";
+  // Select all expedition divs and sort them based on their CSS order
+  const expeditions = Array.from(
+    document.querySelectorAll('div[class^="expedition-"]')
+  );
+  expeditions.sort(
+    (a, b) =>
+      parseInt(getComputedStyle(a).order) - parseInt(getComputedStyle(b).order)
+  );
 
-  colors.forEach((color) => {
+  // Extract color names from the sorted expedition divs
+  const orderedColors = expeditions.map(
+    (expedition) => expedition.className.split("-")[1]
+  );
+
+  let totalScore = 0;
+  let colorColumnsHtml = ""; // HTML for the columns of each color's score
+
+  orderedColors.forEach((color) => {
     const expeditionCards = document.querySelectorAll(
       `.expedition-${color} .card.expedition-card.active`
     );
@@ -128,18 +118,24 @@ function calculateScores() {
     // Check for bonus points
     if (expeditionCards.length + wagerCards.length >= 8) {
       bonusPoints = 20;
-      expeditionScore += bonusPoints;
     }
 
-    scoreDisplayText += `Score for ${color}: ${expeditionScore}<br>`;
+    let colorTotalScore = expeditionScore + bonusPoints;
+    totalScore += colorTotalScore;
+
+    // Construct HTML for each color's column
+    colorColumnsHtml += `<div class='color-score-column ${color}-column'>`;
+    colorColumnsHtml += `<div class='color-score-total'>${color}:<br>${expeditionScore}</div>`;
     if (bonusPoints > 0) {
-      scoreDisplayText += `${
-        color.charAt(0).toUpperCase() + color.slice(1)
-      } Bonus Points: ${bonusPoints}<br>`;
+      colorColumnsHtml += `<div class='color-score-bonus'>Bonus for ${color}: ${bonusPoints}</div>`;
     }
-    totalScore += expeditionScore;
+    colorColumnsHtml += `</div>`;
   });
 
-  scoreDisplayText += `<strong>Total Score: ${totalScore}</strong>`;
+  // Construct the final display text with scores and total score
+  let scoreDisplayText = `<div class='scores-heading'>Scores</div>`;
+  scoreDisplayText += `<div class='scores-columns'>${colorColumnsHtml}</div>`;
+  scoreDisplayText += `<div class='overall-total-score'><strong>Total Score: ${totalScore}</strong></div>`;
+
   document.getElementById("score-display").innerHTML = scoreDisplayText;
 }

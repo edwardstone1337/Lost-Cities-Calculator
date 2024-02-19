@@ -142,14 +142,15 @@ div[class^="expedition-"] {
 
 .text {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  align-self: stretch;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .text-left {
   color: var(--white);
-  text-align: right;
+  text-align: center;
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -184,7 +185,7 @@ div[class^="expedition-"] {
 
 .expedition-purple .card:hover {
   border-radius: 4px;
-  border: 0.5px solid white;
+  border: 0.5px solid var(--purple);
   background: #000;
   box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
     0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
@@ -193,7 +194,7 @@ div[class^="expedition-"] {
 .expedition-purple .card:hover .card-image {
   background: url(Images/purple-card.png), cover no-repeat;
   filter: none;
-  border: 0.5px solid white;
+  border: 0.5px solid var(--purple);
   opacity: 0.5;
 }
 
@@ -228,7 +229,7 @@ div[class^="expedition-"] {
 
 .expedition-green .card:hover {
   border-radius: 4px;
-  border: 0.5px solid white;
+  border: 0.5px solid var(--green);
   background: #000;
   box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
     0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
@@ -237,7 +238,7 @@ div[class^="expedition-"] {
 .expedition-green .card:hover .card-image {
   background: url(Images/green-card.png), cover no-repeat;
   filter: none;
-  border: 0.5px solid white;
+  border: 0.5px solid var(--green);
   opacity: 0.5;
 }
 
@@ -272,7 +273,7 @@ div[class^="expedition-"] {
 
 .expedition-red .card:hover {
   border-radius: 4px;
-  border: 0.5px solid white;
+  border: 0.5px solid var(--red);
   background: #000;
   box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
     0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
@@ -281,7 +282,7 @@ div[class^="expedition-"] {
 .expedition-red .card:hover .card-image {
   background: url(Images/red-card.png), cover no-repeat;
   filter: none;
-  border: 0.5px solid white;
+  border: 0.5px solid var(--red);
   opacity: 0.5;
 }
 
@@ -316,7 +317,7 @@ div[class^="expedition-"] {
 
 .expedition-blue .card:hover {
   border-radius: 4px;
-  border: 0.5px solid white;
+  border: 0.5px solid var(--blue);
   background: #000;
   box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
     0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
@@ -325,7 +326,7 @@ div[class^="expedition-"] {
 .expedition-blue .card:hover .card-image {
   background: url(Images/blue-card.png), cover no-repeat;
   filter: none;
-  border: 0.5px solid white;
+  border: 0.5px solid var(--blue);
   opacity: 0.5;
 }
 
@@ -360,7 +361,7 @@ div[class^="expedition-"] {
 
 .expedition-grey .card:hover {
   border-radius: 4px;
-  border: 0.5px solid white;
+  border: 0.5px solid var(--white);
   background: #000;
   box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
     0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
@@ -369,7 +370,7 @@ div[class^="expedition-"] {
 .expedition-grey .card:hover .card-image {
   background: url(Images/grey-card.png), cover no-repeat;
   filter: none;
-  border: 0.5px solid white;
+  border: 0.5px solid var(--white);
   opacity: 0.5;
 }
 
@@ -404,7 +405,7 @@ div[class^="expedition-"] {
 
 .expedition-gold .card:hover {
   border-radius: 4px;
-  border: 0.5px solid white;
+  border: 0.5px solid var(--gold);
   background: #000;
   box-shadow: 0px -8px 16px -4px rgba(0, 0, 0, 0.38),
     0px -16px 24px 0px rgba(0, 0, 0, 0.24), 0px -8px 8px -4px rgba(0, 0, 0, 0.7);
@@ -413,7 +414,7 @@ div[class^="expedition-"] {
 .expedition-gold .card:hover .card-image {
   background: url(Images/gold-card.png), cover no-repeat;
   filter: none;
-  border: 0.5px solid white;
+  border: 0.5px solid var(--gold);
   opacity: 0.5;
 }
 
@@ -441,6 +442,58 @@ div[class^="expedition-"] {
   color: var(--gold);
 }
 
-#score-display {
+/*Scores*/
+
+.score-display {
+  width: 100%;
+}
+
+.scores-heading {
+  display: none;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
   color: white;
+}
+
+.scores-columns {
+  display: flex;
+  margin-bottom: 15px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+[class^="color-score-column"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1; /* Equal space distribution */
+  width: 57.5px;
+}
+
+.color-score-total {
+  /* display: none; */
+}
+
+.color-score-bonus {
+  /* display: none; */
+}
+.overall-total-score {
+  color: var(--white);
+  /* display: none; */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none; /* Disables transitions */
+  }
+
+  .card:hover,
+  .card.active,
+  .card.active:hover {
+    transform: none; /* Disables transformations on hover/active states */
+  }
 }

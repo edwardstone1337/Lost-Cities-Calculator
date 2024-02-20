@@ -164,6 +164,7 @@ function hideModal() {
   modal.style.display = "none";
 }
 
+
 // Get the modal
 var modal = document.getElementById("scoreModal");
 

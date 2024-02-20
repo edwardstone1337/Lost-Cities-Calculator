@@ -571,7 +571,7 @@ div[class^="expedition-"] {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black background */
-  display: flex;
+  display: none;
   justify-content: center; /* centers the modal horizontally */
   align-items: center; /* centers the modal vertically */
   border-radius: 12px;

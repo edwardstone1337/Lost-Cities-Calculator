@@ -10,6 +10,7 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
+
 // Function to reset cards
 function resetCards() {
   document.querySelectorAll(".card.active").forEach((card) => {
@@ -124,18 +125,23 @@ function calculateScores() {
 
     // Construct HTML for each color's column
     colorColumnsHtml += `<div class='color-score-column ${color}-column'>`;
-    colorColumnsHtml += `<div class='color-score-total'>${color}:<br>${expeditionScore}</div>`;
+    colorColumnsHtml += `<div class='exp-icon'><img src='/Images/${color}-expedition.png' /></div>`;
+    colorColumnsHtml += `<div class='color-score-total'>${expeditionScore}</div>`;
     if (bonusPoints > 0) {
-      colorColumnsHtml += `<div class='color-score-bonus'>Bonus for ${color}: ${bonusPoints}</div>`;
+      colorColumnsHtml += `<div class='color-score-bonus-title'>Bonus</div>`;
+      colorColumnsHtml += `<div class='color-score-bonus-total'>${bonusPoints}</div>`;
     }
     colorColumnsHtml += `</div>`;
   });
 
-  let scoreDisplayText = `<div class='scores-heading'>Scores</div>`;
+  // Constructing the scoreDisplayText with new HTML structure
+  let scoreDisplayText = `<div class='overall-total-score'>`;
+  scoreDisplayText += `<strong>Total Score</strong>`;
+  scoreDisplayText += `<div class='final-score'>${totalScore}</div>`;
+  scoreDisplayText += `</div>`;
   scoreDisplayText += `<div class='scores-columns'>${colorColumnsHtml}</div>`;
-  scoreDisplayText += `<div class='overall-total-score'><strong>Total Score: ${totalScore}</strong></div>`;
 
-  // Update score-display content here
+  // Update score-display content
   document.getElementById("score-display").innerHTML = scoreDisplayText;
 }
 

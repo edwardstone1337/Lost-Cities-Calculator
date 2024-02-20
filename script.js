@@ -125,7 +125,7 @@ function calculateScores() {
 
     // Construct HTML for each color's column
     colorColumnsHtml += `<div class='color-score-column ${color}-column'>`;
-    colorColumnsHtml += `<div class='exp-icon'><img src='/Images/${color}-expedition.png' /></div>`;
+    colorColumnsHtml += `<div class='exp-icon'><img src='Images/${color}-expedition.png' /></div>`;
     colorColumnsHtml += `<div class='color-score-total'>${expeditionScore}</div>`;
     if (bonusPoints > 0) {
       colorColumnsHtml += `<div class='color-score-bonus-title'>Bonus</div>`;

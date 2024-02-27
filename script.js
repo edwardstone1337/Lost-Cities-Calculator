@@ -1,3 +1,8 @@
+window.onload = function() {
+  var loadingDiv = document.getElementById('loadingDiv');
+  loadingDiv.style.visibility = 'hidden';
+};
+
 // Event listener for keyboard inputs
 document.addEventListener("keydown", function (event) {
   if (event.key === "r" || event.key === "R") {
@@ -5,21 +10,17 @@ document.addEventListener("keydown", function (event) {
   } else if (event.key === "Enter") {
     calculateScores(); // Call calculateScores if 'Enter' is pressed
     showModal(); // Show the modal when Calculate Scores is executed
-  } else if (event.key === "s" || event.key === "S") {
-    swapOrder(); // Call swapOrder if 'S' is pressed
   }
 });
-
 
 // Function to reset cards
 function resetCards() {
   document.querySelectorAll(".card.active").forEach((card) => {
     card.classList.remove("active");
   });
-
-  // Do not clear or hide the score display here
-  // Let the calculateScores function handle the score display updates
+  updateResetButtonVisibility(); // Update the visibility of the reset button after resetting cards
 }
+
 
 // Find the button by its ID
 var resetCardsButton = document.getElementById("resetCards");
@@ -27,6 +28,7 @@ var resetCardsButton = document.getElementById("resetCards");
 // Add a click event listener to the button
 resetCardsButton.addEventListener("click", function () {
   resetCards(); // Call the resetCards function when the button is clicked
+  updateResetButtonVisibility(); // Update the visibility of the reset button
 });
 
 // Event listeners for card interactions
@@ -40,9 +42,17 @@ document.querySelectorAll(".card").forEach((card) => {
     } else {
       this.style.setProperty("--rotate-y", "0deg"); // Rotate card back to 0 degrees if not active
     }
+
+    updateResetButtonVisibility(); // Call this function to update the visibility of the reset button
   });
 });
 
+resetCardsButton.style.display = 'none'; // Initially hide the reset button
+
+function updateResetButtonVisibility() {
+  const anyActiveCard = document.querySelector(".card.active");
+  resetCardsButton.style.display = anyActiveCard ? 'block' : 'none';
+}
 let isSwapped = false;
 
 // Function to swap order
@@ -188,3 +198,42 @@ var resetCardsButton = document.getElementById("resetCards");
 resetCardsButton.addEventListener("click", function () {
   resetCards();
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  var contactModal = document.getElementById("contactModal");
+  var contactLink = document.getElementById("contact-link");
+  var contactSpan = document.getElementsByClassName("contact-close")[0];
+
+  contactLink.onclick = function(event) {
+    event.preventDefault(); // Prevent default hyperlink action
+    contactModal.style.display = "block";
+  }
+
+  contactSpan.onclick = function() {
+    contactModal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target === contactModal) {
+      contactModal.style.display = "none";
+    }
+  }
+});
+
+
+
+
+
+resetCardsButton.style.display = 'none'; // Initially hide the reset button
+
+function updateResetButtonVisibility() {
+  const anyActiveCard = document.querySelector(".card.active");
+  resetCardsButton.style.display = anyActiveCard ? 'block' : 'none';
+}
+
+resetCardsButton.addEventListener("click", function () {
+  resetCards();
+  updateResetButtonVisibility(); // Hide the button after resetting cards
+});
+
+

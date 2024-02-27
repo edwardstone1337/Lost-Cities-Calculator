@@ -21,10 +21,14 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/png" href="/Images/favicon.png"/>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet" />
+    <!-- Preconnect to Google Fonts for better performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Link to your chosen Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
 
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -48,6 +52,11 @@
   </head>
 
   <body>
+
+    <div id="loadingDiv" class="loading">
+      <p>Preparing Expedition...</p>
+    </div>
+    
     <div class="content-container">
       <div class="logo-button-container">
         <div class="logo"></div>
@@ -721,7 +730,40 @@
       </div>
 
       <button id="resetCards">Reset Cards</button>
-      
+
+
+<!-- Contact Modal Container -->
+<div class="contact-modal" id="contactModal">
+  <div class="modal-content">
+    <span class="contact-close">&times;</span>
+  
+    <!-- Your Existing Form -->
+    <form action="https://submit-form.com/ejHR2DVPs">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Name" required="" />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Email" required="" />
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Message" required=""></textarea>
+      <button type="submit" id="contact-send">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- Trigger Hyperlink -->
+<div class="contact-container">
+<p>Have a suggestion?</p><a href="#" id="contact-link">Contact us</a>
+</div>
+
+
+
+
+
+
+
+
+
+
     </div>
   </body>
   <script src="script.js"></script>

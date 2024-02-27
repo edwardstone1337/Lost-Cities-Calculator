@@ -25,6 +25,20 @@
   text-decoration: none;
 }
 
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2em;
+}
+
 body {
   display: flex;
   padding: 16px;
@@ -77,45 +91,32 @@ button:hover {
   /* Add any other styling as needed */
 }
 
-.button-style {
+.button-style,
+#contact-send {
   display: flex;
   padding: 8px;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(
-    107deg,
-    #fece42 0%,
-    #feda43 21.5%,
-    #fbd37d 40.5%,
-    #f1a005 79.5%,
-    #efc318 100%
-  );
+  background: linear-gradient(107deg,
+      #fece42 0%,
+      #feda43 21.5%,
+      #fbd37d 40.5%,
+      #f1a005 79.5%,
+      #efc318 100%);
 
   border-radius: 8px;
 
   border: 1px solid transparent;
-  /* border-image: linear-gradient(
-    to bottom,
-    rgba(170, 61, 16, 1),
-    rgba(107, 47, 47, 1),
-    rgba(64, 36, 42, 1),
-    rgba(38, 30, 66, 1)
-  );
-  border-image-slice: 1; */
 
-  -webkit-mask-image: linear-gradient(
-    45deg,
-    #fff 25%,
-    rgba(255, 255, 255, 0.2) 50%,
-    #fff 75%
-  );
-  mask-image: linear-gradient(
-    45deg,
-    #fff 25%,
-    rgba(255, 255, 255, 0.2) 50%,
-    #fff 75%
-  );
+  -webkit-mask-image: linear-gradient(45deg,
+      #fff 25%,
+      rgba(255, 255, 255, 0.2) 50%,
+      #fff 75%);
+  mask-image: linear-gradient(45deg,
+      #fff 25%,
+      rgba(255, 255, 255, 0.2) 50%,
+      #fff 75%);
   -webkit-mask-size: 800%;
   mask-size: 800%;
   -webkit-mask-position: 0;
@@ -123,10 +124,11 @@ button:hover {
 
   color: #0b0908;
   text-align: center;
-  font-family: Inter;
+  font-family: Acme;
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .button-style:hover {
@@ -136,7 +138,6 @@ button:hover {
   mask-position: 120%;
   opacity: 1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  /* transform: scale(1.05); */
 }
 
 .container {
@@ -179,7 +180,7 @@ div[class^="expedition-"] {
   perspective: 1000px;
 }
 
-.card-stack > *:not(:first-child) {
+.card-stack>*:not(:first-child) {
   margin-top: -32px;
 }
 
@@ -208,7 +209,7 @@ div[class^="expedition-"] {
   z-index: 0;
 }
 
-.card:hover ~ .card {
+.card:hover~.card {
   z-index: 1;
 }
 
@@ -231,7 +232,7 @@ div[class^="expedition-"] {
   /* This ensures the text doesn't show through the back of the card */
 }
 
-.card:hover ~ .card {
+.card:hover~.card {
   z-index: 1;
 }
 
@@ -409,7 +410,6 @@ div[class^="expedition-"] {
 /* Expedition blue */
 .expedition-blue .exp-icon {
   background-image: url(Images/blue-expedition.png);
-  
 }
 
 .expedition-blue .card:hover {
@@ -554,16 +554,17 @@ div[class^="expedition-"] {
   align-self: stretch;
   width: 100%;
   height: 48px;
-  border-radius: 4px;
+  border-radius: 8px;
   border: 1px solid #fece42;
   background: rgba(0, 0, 0, 0.25);
   color: white;
   color: #eea418;
   text-align: center;
-  font-family: Inter;
+  font-family: Acme;
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .modal {
@@ -574,10 +575,13 @@ div[class^="expedition-"] {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black background */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* semi-transparent black background */
   display: none;
-  justify-content: center; /* centers the modal horizontally */
-  align-items: center; /* centers the modal vertically */
+  justify-content: center;
+  /* centers the modal horizontally */
+  align-items: center;
+  /* centers the modal vertically */
   border-radius: 12px;
 }
 
@@ -593,25 +597,11 @@ div[class^="expedition-"] {
   max-width: 375px;
   background-image: url("/Images/background-optimised.jpg");
   background-size: cover;
-  background-position: center; /* This centers the image in the container */
+  background-position: center;
+  /* This centers the image in the container */
   border: 1px solid #f6da4b;
   gap: 24px;
 }
-
-/* 
-.close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: White;
-  text-decoration: none;
-  cursor: pointer;
-} */
 
 #score-display {
   display: flex;
@@ -656,15 +646,19 @@ strong {
 
 .scores-columns {
   display: flex;
-  flex-direction: row; /* Change to row to align score columns horizontally */
-  justify-content: space-around; /* This will space out the columns evenly */
-  align-items: flex-start; /* Aligns columns at the top */
+  flex-direction: row;
+  /* Change to row to align score columns horizontally */
+  justify-content: space-around;
+  /* This will space out the columns evenly */
+  align-items: flex-start;
+  /* Aligns columns at the top */
   width: 100%;
 }
 
 .color-score-column {
   flex: 1;
-  max-width: 48px; /* Each column will take equal width */
+  max-width: 48px;
+  /* Each column will take equal width */
 }
 
 .exp-icon {
@@ -719,6 +713,93 @@ strong {
   font-weight: 400;
   line-height: normal;
 }
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  color: white;
+  justify-content: center;
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: Acme;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.contact-container p {
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: Acme;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.contact-container #contact-link {
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: Acme;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* /* Contact Modal /* */
+#contact-link {
+  color: white;
+  text-decoration: underline;
+}
+
+.contact-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #f6da4b;
+  width: 80%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+label {
+  margin-bottom: 8px;
+  /* Space between label and input */
+  align-self: flex-start;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  margin-bottom: 16px;
+  /* 16px gap between each input/textarea */
+  width: 100%;
+  /* Adjust width as needed */
+  padding: 16px 8px;
+  border-radius: 8px;
+  border: none;
+}
+
 /*Media Queries*/
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,6 +1,6 @@
-window.onload = function() {
-  var loadingDiv = document.getElementById('loadingDiv');
-  loadingDiv.style.visibility = 'hidden';
+window.onload = function () {
+  var loadingDiv = document.getElementById("loadingDiv");
+  loadingDiv.style.visibility = "hidden";
 };
 
 // Event listener for keyboard inputs
@@ -20,7 +20,6 @@ function resetCards() {
   });
   updateResetButtonVisibility(); // Update the visibility of the reset button after resetting cards
 }
-
 
 // Find the button by its ID
 var resetCardsButton = document.getElementById("resetCards");
@@ -47,11 +46,11 @@ document.querySelectorAll(".card").forEach((card) => {
   });
 });
 
-resetCardsButton.style.display = 'none'; // Initially hide the reset button
+resetCardsButton.style.display = "none"; // Initially hide the reset button
 
 function updateResetButtonVisibility() {
   const anyActiveCard = document.querySelector(".card.active");
-  resetCardsButton.style.display = anyActiveCard ? 'block' : 'none';
+  resetCardsButton.style.display = anyActiveCard ? "block" : "none";
 }
 let isSwapped = false;
 
@@ -174,7 +173,6 @@ function hideModal() {
   modal.style.display = "none";
 }
 
-
 // Get the modal
 var modal = document.getElementById("scoreModal");
 
@@ -188,8 +186,22 @@ span.onclick = function () {
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-  if (event.target == modal) {
-    hideModal();
+  var scoreModal = document.getElementById("scoreModal");
+  var contactModal = document.getElementById("contactModal");
+
+  // Check for scoreModal
+  var scoreModalContent = scoreModal.querySelector(".modal-content");
+  if (event.target == scoreModal && !scoreModalContent.contains(event.target)) {
+    hideModal("scoreModal");
+  }
+
+  // Check for contactModal
+  var contactModalContent = contactModal.querySelector(".modal-content");
+  if (
+    event.target === contactModal &&
+    !contactModalContent.contains(event.target)
+  ) {
+    contactModal.style.display = "none";
   }
 };
 
@@ -199,41 +211,29 @@ resetCardsButton.addEventListener("click", function () {
   resetCards();
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   var contactModal = document.getElementById("contactModal");
   var contactLink = document.getElementById("contact-link");
   var contactSpan = document.getElementsByClassName("contact-close")[0];
 
-  contactLink.onclick = function(event) {
+  contactLink.onclick = function (event) {
     event.preventDefault(); // Prevent default hyperlink action
     contactModal.style.display = "block";
-  }
+  };
 
-  contactSpan.onclick = function() {
+  contactSpan.onclick = function () {
     contactModal.style.display = "none";
-  }
-
-  window.onclick = function(event) {
-    if (event.target === contactModal) {
-      contactModal.style.display = "none";
-    }
-  }
+  };
 });
 
-
-
-
-
-resetCardsButton.style.display = 'none'; // Initially hide the reset button
+resetCardsButton.style.display = "none"; // Initially hide the reset button
 
 function updateResetButtonVisibility() {
   const anyActiveCard = document.querySelector(".card.active");
-  resetCardsButton.style.display = anyActiveCard ? 'block' : 'none';
+  resetCardsButton.style.display = anyActiveCard ? "block" : "none";
 }
 
 resetCardsButton.addEventListener("click", function () {
   resetCards();
   updateResetButtonVisibility(); // Hide the button after resetting cards
 });
-
-

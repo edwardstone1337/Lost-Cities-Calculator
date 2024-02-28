@@ -98,30 +98,32 @@ button:hover {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(107deg,
-      #fece42 0%,
-      #feda43 21.5%,
-      #fbd37d 40.5%,
-      #f1a005 79.5%,
-      #efc318 100%);
-
+  background: linear-gradient(
+    107deg,
+    #fece42 0%,
+    #feda43 21.5%,
+    #fbd37d 40.5%,
+    #f1a005 79.5%,
+    #efc318 100%
+  );
   border-radius: 8px;
-
   border: 1px solid transparent;
-
-  -webkit-mask-image: linear-gradient(45deg,
-      #fff 25%,
-      rgba(255, 255, 255, 0.2) 50%,
-      #fff 75%);
-  mask-image: linear-gradient(45deg,
-      #fff 25%,
-      rgba(255, 255, 255, 0.2) 50%,
-      #fff 75%);
+  -webkit-mask-image: linear-gradient(
+    45deg,
+    #fff 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    #fff 75%
+  );
+  mask-image: linear-gradient(
+    45deg,
+    #fff 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    #fff 75%
+  );
   -webkit-mask-size: 800%;
   mask-size: 800%;
   -webkit-mask-position: 0;
   mask-position: 0;
-
   color: #0b0908;
   text-align: center;
   font-family: Acme;
@@ -180,8 +182,8 @@ div[class^="expedition-"] {
   perspective: 1000px;
 }
 
-.card-stack>*:not(:first-child) {
-  margin-top: -32px;
+.card-stack > *:not(:first-child) {
+  margin-top: -24px;
 }
 
 .card {
@@ -209,7 +211,7 @@ div[class^="expedition-"] {
   z-index: 0;
 }
 
-.card:hover~.card {
+.card:hover ~ .card {
   z-index: 1;
 }
 
@@ -232,7 +234,7 @@ div[class^="expedition-"] {
   /* This ensures the text doesn't show through the back of the card */
 }
 
-.card:hover~.card {
+.card:hover ~ .card {
   z-index: 1;
 }
 
@@ -555,10 +557,9 @@ div[class^="expedition-"] {
   width: 100%;
   height: 48px;
   border-radius: 8px;
-  border: 1px solid #fece42;
+  border: 1px solid var(--gold);
   background: rgba(0, 0, 0, 0.25);
-  color: white;
-  color: #eea418;
+  color: var(--gold);
   text-align: center;
   font-family: Acme;
   font-size: 16px;
@@ -718,9 +719,7 @@ strong {
   display: flex;
   flex-direction: row;
   gap: 8px;
-  color: white;
   justify-content: center;
-  color: var(--White, #fff);
   text-align: center;
   font-family: Acme;
   font-size: 16px;
@@ -730,7 +729,7 @@ strong {
 }
 
 .contact-container p {
-  color: var(--White, #fff);
+  color: var(--gold);
   text-align: center;
   font-family: Acme;
   font-size: 16px;
@@ -740,7 +739,7 @@ strong {
 }
 
 .contact-container #contact-link {
-  color: var(--White, #fff);
+  color: var(--gold);
   text-align: center;
   font-family: Acme;
   font-size: 16px;
@@ -801,18 +800,35 @@ textarea {
 }
 
 .coffee {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   color: white;
   text-align: center;
-font-family: Inter;
-font-size: 12px;
-font-style: normal;
-font-weight: 300;
-line-height: normal;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.coffee h3 {
+  color: #f6da4b;
+  text-align: center;
+  font-family: Acme;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .coffee a {
-color: white;
-text-decoration: underline;
+  color: #faf1ab;
+  text-decoration: underline;
+}
+
+.coffee p {
+  color: #faf1ab;
 }
 
 /*Media Queries*/

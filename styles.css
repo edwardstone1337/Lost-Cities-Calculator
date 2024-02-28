@@ -800,6 +800,21 @@ textarea {
   border: none;
 }
 
+.coffee {
+  color: white;
+  text-align: center;
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+}
+
+.coffee a {
+color: white;
+text-decoration: underline;
+}
+
 /*Media Queries*/
 
 @media (prefers-reduced-motion: reduce) {

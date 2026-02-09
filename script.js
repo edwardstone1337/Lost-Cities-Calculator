@@ -1,6 +1,6 @@
 window.onload = function () {
   var loadingDiv = document.getElementById("loadingDiv");
-  loadingDiv.style.visibility = "hidden";
+  loadingDiv.classList.add("is-hidden");
 };
 
 // Event listener for keyboard inputs
@@ -187,21 +187,11 @@ span.onclick = function () {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   var scoreModal = document.getElementById("scoreModal");
-  var contactModal = document.getElementById("contactModal");
 
   // Check for scoreModal
   var scoreModalContent = scoreModal.querySelector(".modal-content");
   if (event.target == scoreModal && !scoreModalContent.contains(event.target)) {
     hideModal("scoreModal");
-  }
-
-  // Check for contactModal
-  var contactModalContent = contactModal.querySelector(".modal-content");
-  if (
-    event.target === contactModal &&
-    !contactModalContent.contains(event.target)
-  ) {
-    contactModal.style.display = "none";
   }
 };
 
@@ -209,21 +199,6 @@ window.onclick = function (event) {
 var resetCardsButton = document.getElementById("resetCards");
 resetCardsButton.addEventListener("click", function () {
   resetCards();
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  var contactModal = document.getElementById("contactModal");
-  var contactLink = document.getElementById("contact-link");
-  var contactSpan = document.getElementsByClassName("contact-close")[0];
-
-  contactLink.onclick = function (event) {
-    event.preventDefault(); // Prevent default hyperlink action
-    contactModal.style.display = "block";
-  };
-
-  contactSpan.onclick = function () {
-    contactModal.style.display = "none";
-  };
 });
 
 resetCardsButton.style.display = "none"; // Initially hide the reset button

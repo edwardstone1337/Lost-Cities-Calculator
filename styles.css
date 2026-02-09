@@ -37,16 +37,47 @@
   align-items: center;
   text-align: center;
   font-size: 2em;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.loading.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading p {
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
 }
 
 body {
   display: flex;
-  padding: 16px;
   flex-direction: column;
   align-items: center;
   gap: 8px;
   background: url(Images/background-optimised.jpg) no-repeat center;
   background-size: cover;
+}
+
+#es-footer {
+  width: 100%;
+  align-self: stretch;
+}
+
+.site-disclaimer {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: rgba(250, 241, 171, 0.5);
+  text-align: center;
+  padding: 24px 16px 0;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 button:hover {
@@ -60,6 +91,7 @@ button:hover {
   width: 100%;
   height: auto;
   max-width: 375px;
+  padding: 16px;
 }
 
 .logo-button-container {
@@ -91,8 +123,7 @@ button:hover {
   /* Add any other styling as needed */
 }
 
-.button-style,
-#contact-send {
+.button-style {
   display: flex;
   padding: 8px;
   justify-content: center;
@@ -715,90 +746,6 @@ strong {
   line-height: normal;
 }
 
-.contact-container {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  justify-content: center;
-  text-align: center;
-  font-family: Acme;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-}
-
-.contact-container p {
-  color: var(--gold);
-  text-align: center;
-  font-family: Acme;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-}
-
-.contact-container #contact-link {
-  color: var(--gold);
-  text-align: center;
-  font-family: Acme;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-}
-
-/* /* Contact Modal /* */
-#contact-link {
-  color: white;
-  text-decoration: underline;
-}
-
-.contact-modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #f6da4b;
-  width: 80%;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-label {
-  margin-bottom: 8px;
-  /* Space between label and input */
-  align-self: flex-start;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-  margin-bottom: 16px;
-  /* 16px gap between each input/textarea */
-  width: 100%;
-  /* Adjust width as needed */
-  padding: 16px 8px;
-  border-radius: 8px;
-  border: none;
-}
-
 .coffee {
   display: flex;
   flex-direction: column;
@@ -844,5 +791,9 @@ textarea {
   .card.active:hover {
     transform: none;
     /* Disables transformations on hover/active states */
+  }
+
+  .loading p {
+    animation: none;
   }
 }
